@@ -11,16 +11,16 @@
             "skipped": 0,
             "pending": 0,
             "other": 0,
-            "start": 1743461262.657272,
-            "stop": 1743461274.571095
+            "start": 1747864801.501486,
+            "stop": 1747864817.304731
         },
         "tests": [
             {
                 "name": "tests/test_desktop.py::test_accept_cookies",
                 "status": "passed",
-                "duration": 2.317485499952454,
-                "start": 1743461262.679092,
-                "stop": 1743461264.996938,
+                "duration": 6.309230999991996,
+                "start": 1747864801.5154848,
+                "stop": 1747864807.825016,
                 "retries": 0,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
@@ -30,9 +30,9 @@
             {
                 "name": "tests/test_desktop.py::test_founders",
                 "status": "passed",
-                "duration": 1.408414457924664,
-                "start": 1743461264.99733,
-                "stop": 1743461266.4059362,
+                "duration": 1.4068186670046998,
+                "start": 1747864807.8255968,
+                "stop": 1747864809.232587,
                 "retries": 0,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
@@ -42,9 +42,9 @@
             {
                 "name": "tests/test_desktop.py::test_validation",
                 "status": "passed",
-                "duration": 0.8969541660626419,
-                "start": 1743461266.4064362,
-                "stop": 1743461267.303547,
+                "duration": 1.3366951680072816,
+                "start": 1747864809.233035,
+                "stop": 1747864810.5698612,
                 "retries": 0,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
@@ -54,9 +54,9 @@
             {
                 "name": "tests/test_desktop.py::test_invalid_input",
                 "status": "passed",
-                "duration": 0.08595325099304318,
-                "start": 1743461267.303953,
-                "stop": 1743461267.3900428,
+                "duration": 0.11725275001663249,
+                "start": 1747864810.5702589,
+                "stop": 1747864810.687656,
                 "retries": 0,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
@@ -66,9 +66,9 @@
             {
                 "name": "tests/test_desktop.py::test_submit_contact_form",
                 "status": "passed",
-                "duration": 0.1496169170131907,
-                "start": 1743461267.390486,
-                "stop": 1743461267.5402691,
+                "duration": 0.11072712400346063,
+                "start": 1747864810.688181,
+                "stop": 1747864810.799099,
                 "retries": 0,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
@@ -78,9 +78,9 @@
             {
                 "name": "tests/test_desktop.py::test_primary_offices",
                 "status": "passed",
-                "duration": 0.9446375410188921,
-                "start": 1743461267.540677,
-                "stop": 1743461268.485458,
+                "duration": 0.8904718749981839,
+                "start": 1747864810.799583,
+                "stop": 1747864811.690186,
                 "retries": 0,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
@@ -90,9 +90,9 @@
             {
                 "name": "tests/test_mobile.py::test_accept_cookies",
                 "status": "passed",
-                "duration": 2.362367997993715,
-                "start": 1743461268.486042,
-                "stop": 1743461270.848607,
+                "duration": 2.1754486669960897,
+                "start": 1747864811.690795,
+                "stop": 1747864813.866463,
                 "retries": 0,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
@@ -102,9 +102,9 @@
             {
                 "name": "tests/test_mobile.py::test_founders",
                 "status": "passed",
-                "duration": 2.1524323749472387,
-                "start": 1743461270.84917,
-                "stop": 1743461273.001767,
+                "duration": 0.8376888749917271,
+                "start": 1747864813.8669271,
+                "stop": 1747864814.70481,
                 "retries": 0,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
@@ -114,9 +114,9 @@
             {
                 "name": "tests/test_mobile.py::test_validation",
                 "status": "passed",
-                "duration": 0.5947885010391474,
-                "start": 1743461273.002166,
-                "stop": 1743461273.597128,
+                "duration": 1.348438040993642,
+                "start": 1747864814.705266,
+                "stop": 1747864816.053851,
                 "retries": 0,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
@@ -126,9 +126,9 @@
             {
                 "name": "tests/test_mobile.py::test_invalid_input",
                 "status": "passed",
-                "duration": 0.1066794169601053,
-                "start": 1743461273.597565,
-                "stop": 1743461273.704395,
+                "duration": 0.13904024999646936,
+                "start": 1747864816.0543091,
+                "stop": 1747864816.193502,
                 "retries": 0,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
@@ -138,9 +138,9 @@
             {
                 "name": "tests/test_mobile.py::test_submit_contact_form",
                 "status": "passed",
-                "duration": 0.1328917090431787,
-                "start": 1743461273.704839,
-                "stop": 1743461273.837881,
+                "duration": 0.11678362500970252,
+                "start": 1747864816.19397,
+                "stop": 1747864816.310891,
                 "retries": 0,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
@@ -150,9 +150,9 @@
             {
                 "name": "tests/test_mobile.py::test_primary_offices",
                 "status": "passed",
-                "duration": 0.7321824999526143,
-                "start": 1743461273.8383439,
-                "stop": 1743461274.570668,
+                "duration": 0.9926649999979418,
+                "start": 1747864816.311423,
+                "stop": 1747864817.30423,
                 "retries": 0,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
