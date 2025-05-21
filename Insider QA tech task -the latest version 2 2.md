@@ -48,9 +48,10 @@
 
 ### 2. On the Main page of https://www.hepsiburada.com/ you can see the different Recommendations section with different products. These sections are also shown on Product Detail and Cart pages. What are these product suggestions, what is the rule for listing these products and showing them to the user? Full analysis is expected here.
 
-Product suggestions are served with the help of the recommendation algorithms. In this case, the product recommendations are made based on site bestsellers and general site data on products and visitors listing the products which are popular on the website. Seasonal products are also analyzed and taken into account, e.g. the "bikini". The most viewed products are presented in the "Şu an çok bakılıyor" section. There are also bestsellers of the week, which are supplied in the "Haftanın çok satanları" section. In addition to that, the premium offers are shown in the "Premium fırsatları" section. 
+Product suggestions are served with the help of the recommendation algorithms. In this case, the product recommendations are made based on site bestsellers and general site data on products and visitors listing the products which are popular on the website. Seasonal products are also analyzed and taken into account, e.g. the "bikini" section. These products are fetched using the algorithm for anaylyzing the most purchased products during a season. E.g. the most sold items in summer are beach essentials, including beach towels, swimsuits, beach toys, sunglasses, flip-flops, and waterproof bags. The most viewed products are also presented and they can be viewed under the "Şu an çok bakılıyor" section. There are also bestsellers of the week, which are served in the "Haftanın çok satanları" section. In addition to that, the premium offers are shown in the "Premium fırsatları" section. 
 
 The description of the other product recommentations sections:
+
  - "Popüler ürünlerden seçtik": shows products popular on the website based on general site data on products and visitors.
  - "En Avantajlı Ürünler": shows products which have the best price with regard to the quality / price ratio including promotions.
  - "Süper Fiyat, Süper Teklif": shows products with the lowest prices including discounts and promotions.
@@ -60,22 +61,29 @@ The description of the other product recommentations sections:
  - "Popüler kategorilere özel indirimler": shows special discounts on popular product categories.
  - "Günlük ihtiyaçlarda çok satanlar": shows the best sellers of daily essensitals.
 
+### 3. Automate the scenario below:
+1. Visit https://useinsider.com/ and check Insider home page is opened or not
+2. Select “Company” menu in navigation bar, select “Careers” and check Career page, its Locations, Teams and Life at Insider blocks are opened or not
+3. Go to https://useinsider.com/careers/quality-assurance/, click “See all QA jobs”, filter jobs by Location - Istanbul, Turkey and department - Quality Assurance, check presence of jobs list
+4. Check that all jobs’ Position contains “Quality Assurance”, Department contains “Quality Assurance”, Location contains “Istanbul, Turkey”
+5. Click “View Role” button and check that this action redirects us to Lever Application form page
 
+- Test case should be written using any programming language and framework (Python or Java + Selenium would be preferable)
+- No BDD(Cucumber, Quantum, Codeception, etc.) frameworks are allowed
+- Screenshot should be taken If test fails one of steps
+- Test case should be able to run in Chrome and Firefox browsers and ensure that the browser is parametrically changeable.
+- Test code should fully meet POM requirements
 
+### The test cases have been automated using Playwright and Pytest using the Page Object Model for better maintainability.
+### Below are the instructions on how to install the required libraries and run the tests.
 
-
-
-
-## The test cases have been automated using Playwright and Pytest using the Page Object Model for better maintainability.
-## Below are the instructions on how to install the required libraries and run the tests.
-
-### Installation instructions
+#### Installation instructions
 1. Download the latest Python version from https://www.python.org/downloads and install it (if not installed).
 2. Download the latest version of Git from https://git-scm.com/downloads and install it (if not installed).
 3. Install the Pytest plugin using pip install "pytest-playwright".
 4. Install the Pytest browsers with "playwright install".
 
-### Repository setup
+#### Repository setup
 1. Clone the repository from https://github.com/ivanvalchuk/ui-automation-task.git
 2. "cd" to the folder "ui-automation-task".
 3. The tests are located as follows:
@@ -84,8 +92,7 @@ The description of the other product recommentations sections:
 4. Page objects can be found under the "./page_objects" folder.
 5. Pytest fixtures can be checked under the "./conftest.py" folder.
 
-
-### Running intstructions
+#### Running intstructions
 - "pytest" - runs the tests on both Desktop browsers and mobile.
 - "pytest -m desktop" - runs the tests on Desktop browsers (e.g. Chromium).
 - "pytest -m mobile" - runs the tests on emualated mobile devices (e.g. iPhone 15).
@@ -93,33 +100,7 @@ The description of the other product recommentations sections:
 By default, the tests are run in the 'headless' mode and on Chromium browser on Desktop and iPhone 15. In order to change to the 'headed'  mode, please change this in "./pytest.ini" by setting 'headless' to 'False'. Adding support for other browsers (Firefox, Webkit)
 can be done in the "./conftest" file by adding them to the params of the corresponding fixtures, e.g. params = ['firefox', 'webkit', 'Galaxy S9'], params = ['iPhone 14', 'Pixel 7'].
 
-### Automated test scenarios:
-
-1. Founders 
-- Hover over “About us” and go to “Leadership”.
-- Check Founders' section (check if all 3 founders names are displayed).
-
-2. Contact Form Validation
-- Check that required fields trigger validation errors.
-- Test invalid inputs (e.g. wrong email format) and verify correct error messages.
-
-Candidate-Defined Scenarios:
-
-1. Consent to use of cookies
-- Click on on the "I understand" button on the cookie consent banner to accept the use of cookies.
-- Check if the use of cookies can be accepted.
-
-2.  Check if the 'Contact us' form is protected by reCAPTCHA and cannot be submitted by a bot user.
-- Navigate to the "Contact us" page.
-- Fill out all the required fields.
-- Submit the form (check if the form can be submitted).
-
-3. Locations
-- Hover over “About us” and go to “Locations”.
-- Check Primary offices' section (check if all primary offices are displayed).
-
-
-### How to set up reporting
+#### How to set up reporting
 1. Install the plugin for Allure reporting using "pip install allure-pytest".
 2. Install Allure via "brew install allure" for Mac or check https://allurereport.org/docs/install for other operating systems.
 3. "cd" to the folder "ui-automation-task".
@@ -127,10 +108,10 @@ Candidate-Defined Scenarios:
 5. A generated test report can also be found under the "Actions" tab at https://github.com/ivanvalchuk/ui-automation-task 
    Click on a corresponding workflow run to see the details. 
 
-#### ***Please not that html report can also be generated by running the "pytest --html=report.html" command.
+##### ***Please note that html report can also be generated by running the "pytest --html=report.html" command.
 
-### CI
+#### CI
 The tests are also run on each push and pull request to the respository in GitHub, which is configured in "playwright.yml" as part of the ".github/workflows" folder. The test report is also generated there.
 
-#### The generated html report can also be viewed by opening the "./report.html" file.
-#### The screenshots of the found issues recorded in Allure Report can be found in the "./test_results" folder for reference purposes.
+##### The generated html report can also be viewed by opening the "./report.html" file.
+##### The screenshots of the found issues recorded in Allure Report can be found in the "./test_results" folder for reference purposes.
