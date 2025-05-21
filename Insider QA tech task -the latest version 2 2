@@ -1,0 +1,50 @@
+## > 3 years experienced candidates:
+
+## 1. Describe the steps for comprehensively testing of a pencil with an eraser on one
+end. Cases for all types of testing (such as functional, usability, performance, load,
+stress, security, etc.) are expected here.
+
+### Preconditions: let's assume it's a simple pencil with an eraser and it's made of wood, since no additional information is specified.
+
+### Functional testing:
+ - Make sure that the pencil can draw.
+ - Make sure the pencil can draw through a carbon paper.
+ - Make sure that the pencil writes smoothly, the lines are even and do not leave smudges.
+ - The lead does not break or crumble directly during drawing.
+ - Make sure that the pencil can draw not only on paper but also on but on alternative materials (cardboard, wood, walls, or floor (relevant for construction work).
+ - Check whether the eraser erases notes/sketches and does not smear or make it “dirty”.
+ - During and after sharpening, the lead did not break its integrity.
+ - During and after sharpening, the pencil does not break or crumble.
+ - The sharpened pencil is successfully functioning (you can write, sketch, draw).
+
+### Usability Testing
+- Is it comportable to hold a pencil? 
+- Does it not slip, nor does it fall out when using it?
+- Does it squeak while writing or does it write quietly?
+- How useful is the eraser on the end of the pencil?
+- The body shape is round, triangular, or hexagonal.
+- Pencil sharpens easily with a pencil sharpener.
+
+### Security Testing
+ - Can I get hurt with a pencil (scratched, cut when sharpening)?
+ - Is it safe to give a pencil to a child? There are “safe” types of pencils (for example, special “children” pencils, often with a triangular body) that can be given to children without fear (of course, depending on age, general development, and characteristics of the child).
+ - Is the pencil safe for people with disabilities (eg visually impaired)? E.g. a pencil with a round body can pose a serious problem for a visually impaired person when rolled under a table. For the visually impaired the use of pencils with a hexagonal or triangular barrel is more appropriate.
+
+### Load Testing
+- Let’s check the behavior of the pencil when you press the pencil lead on the paper. Make sure the pencil won’t break.
+- Pull the pencil lead. It must not come out of the body.
+- Tap the pencil on the table several times. The lead should not crumble or break, fall out of the body, or crack.
+- After use, the eraser does not leave crumbs, does not fall out; the ferrule does not bend or leave marks or scratches on paper and hands. 
+
+### Stress Testing
+- Drop the pencil on the floor a couple of times and check whether the lead breaks or crumbles. The pencil body must not be damaged.
+- Try to bend the pencil: will it break or not?
+- Chew on a pencil. It’s advisable that the end of the pencil stays not “eaten”. Many manufacturers pay special attention to this point.
+- Place the pencil in water, then dry it. It should be possible to use it normally for drawing / writing as before.
+- Place the pencil in the freezer for a while to freeze it. It should be possible to use it normally for drawing / writing as before.
+- Use the eraser to rigorously to erase notes / sketches. The eraser head should not wear off quickly.
+
+### Performance Testing
+- Check that the pencil lead does not wear off, nor does it thin quickly while drawing / writing.
+- Check that the eraser head does not wear off quickly while erasing notes / sketches written by the pencil.
+
