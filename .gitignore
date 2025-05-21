@@ -1,0 +1,8 @@
+# ignore directories:
+__pycache__/
+report/
+
+# ignore files:
+settings.json
+report.html
+style.css
