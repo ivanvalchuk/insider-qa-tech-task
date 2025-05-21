@@ -2,9 +2,9 @@
 
 ### 1. Describe the steps for comprehensively testing of a pencil with an eraser on one end. Cases for all types of testing (such as functional, usability, performance, load, stress, security, etc.) are expected here.
 
-### Preconditions: let's assume it's a simple pencil with an eraser and it's made of wood, since no additional information is specified.
+#### Preconditions: let's assume it's a simple pencil with an eraser and it's made of wood, since no additional information is specified.
 
-### Functional testing:
+#### Functional testing:
  - Make sure that the pencil can draw.
  - Make sure the pencil can draw through a carbon paper.
  - Make sure that the pencil writes smoothly, the lines are even and do not leave smudges.
