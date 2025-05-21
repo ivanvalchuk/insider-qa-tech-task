@@ -46,17 +46,18 @@
 - Check that the pencil lead does not wear off, nor does it thin quickly while drawing / writing.
 - Check that the eraser head does not wear off quickly while erasing notes / sketches written by the pencil.
 
+### 2. On the Main page of https://www.hepsiburada.com/ you can see the different Recommendations section with different products. These sections are also shown on Product Detail and Cart pages. What are these product suggestions, what is the rule for listing these products and showing them to the user? Full analysis is expected here.
 
+Product suggestions are served with the help of the recommendation algorithms. In this case, the product recommendations are made based on site bestsellers and general site data on products and visitors listing the products which are popular on the website. Seasonal products are also analyzed and taken into account, e.g. the "bikini". The most viewed products are presented in the "Şu an çok bakılıyor" section. The bestsellers of the week are served under the "Haftanın çok satanları" section. The premium offers are shown in the "Premium fırsatları" section. The best sellers of daily essensitals are displayed under "Günlük ihtiyaçlarda çok satanlar".
 
-
-
-
-
-
-
-
-
-
+The description of the other product recommentations sections:
+ - Popüler ürünlerden seçtik: shows products popular on the website based on general site data on products and visitors.
+ - En Avantajlı Ürünler: shows products which have the best price with regard to the quality / price ratio including promotions.
+ - Süper Fiyat, Süper Teklif: shows products with the lowest prices including discounts and promotions.
+ - Popüler ürünlerden seçtik: this seems like a bug as this section gets duplicated twice: https://app.screencast.com/KhnJDJJwXUhIR
+ - Herkes bu ürünlerin peşinde: shows products which are the most needed based on general site data on products and visitors.
+ - product categories (Bikini, Runner, Giyim, Çanta) list products, which are the most purchased on the website based on general site data on products and visitors.
+ - "Popüler kategorilere özel indirimler": shows special discounts on popular product categories.
 
 
 
