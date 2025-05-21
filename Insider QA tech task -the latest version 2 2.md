@@ -84,8 +84,8 @@ The description of the other product recommentations sections:
 4. Install the Pytest browsers with "playwright install".
 
 #### Repository setup
-1. Clone the repository from https://github.com/ivanvalchuk/ui-automation-task.git
-2. "cd" to the folder "ui-automation-task".
+1. Clone the repository from https://github.com/ivanvalchuk/insider-qa-tech-task.git
+2. "cd" to the folder "insider-qa-tech-task".
 3. The tests are located as follows:
 - "./tests/test_desktop.py" contains test cases for running on Desktop.
 - "./tests/test_mobile.py" contains test cases for running on Mobile.
