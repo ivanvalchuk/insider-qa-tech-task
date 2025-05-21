@@ -46,7 +46,25 @@
 - Check that the pencil lead does not wear off, nor does it thin quickly while drawing / writing.
 - Check that the eraser head does not wear off quickly while erasing notes / sketches written by the pencil.
 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## The test cases have been automated using Playwright and Pytest using the Page Object Model for better maintainability.
 ## Below are the instructions on how to install the required libraries and run the tests.
