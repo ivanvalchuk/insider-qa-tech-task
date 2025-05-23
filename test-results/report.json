@@ -5,15 +5,88 @@
             "version": "8.3.3"
         },
         "summary": {
-            "tests": 0,
-            "passed": 0,
+            "tests": 6,
+            "passed": 6,
             "failed": 0,
             "skipped": 0,
             "pending": 0,
             "other": 0,
-            "start": 1748010875.056133,
-            "stop": 1748010875.0658119
+            "start": 1748011998.582355,
+            "stop": 1748012058.519278
         },
-        "tests": []
+        "tests": [
+            {
+                "name": "tests/test_desktop.py::test_check_navigation",
+                "status": "passed",
+                "duration": 6.789938750967849,
+                "start": 1748011998.595326,
+                "stop": 1748012005.3858528,
+                "retries": 0,
+                "file_path": "tests/test_desktop.py",
+                "tags": [
+                    "desktop"
+                ]
+            },
+            {
+                "name": "tests/test_desktop.py::test_check_career_page",
+                "status": "passed",
+                "duration": 7.431547793006757,
+                "start": 1748012005.3869948,
+                "stop": 1748012012.818771,
+                "retries": 0,
+                "file_path": "tests/test_desktop.py",
+                "tags": [
+                    "desktop"
+                ]
+            },
+            {
+                "name": "tests/test_desktop.py::test_check_quality_assurance_page",
+                "status": "passed",
+                "duration": 14.221892748988466,
+                "start": 1748012012.8194711,
+                "stop": 1748012027.041736,
+                "retries": 0,
+                "file_path": "tests/test_desktop.py",
+                "tags": [
+                    "desktop"
+                ]
+            },
+            {
+                "name": "tests/test_mobile.py::test_check_navigation",
+                "status": "passed",
+                "duration": 6.085086833016248,
+                "start": 1748012027.0430112,
+                "stop": 1748012033.1282911,
+                "retries": 0,
+                "file_path": "tests/test_mobile.py",
+                "tags": [
+                    "mobile"
+                ]
+            },
+            {
+                "name": "tests/test_mobile.py::test_check_career_page",
+                "status": "passed",
+                "duration": 9.580848957994021,
+                "start": 1748012033.128648,
+                "stop": 1748012042.709674,
+                "retries": 0,
+                "file_path": "tests/test_mobile.py",
+                "tags": [
+                    "mobile"
+                ]
+            },
+            {
+                "name": "tests/test_mobile.py::test_check_quality_assurance_page",
+                "status": "passed",
+                "duration": 15.807906459027436,
+                "start": 1748012042.7103932,
+                "stop": 1748012058.5186079,
+                "retries": 0,
+                "file_path": "tests/test_mobile.py",
+                "tags": [
+                    "mobile"
+                ]
+            }
+        ]
     }
 }
