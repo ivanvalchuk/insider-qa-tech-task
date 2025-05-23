@@ -6,38 +6,38 @@
  - Make sure that the pencil can draw.
  - Make sure the pencil can draw through a carbon paper.
  - Make sure that the pencil writes smoothly, the lines are even and do not leave smudges.
- - The lead does not break or crumble directly during drawing.
- - Make sure that the pencil can draw not only on paper but also on but on alternative materials (cardboard, wood, walls, or floor (relevant for construction work).
- - Check whether the eraser erases notes/sketches and does not smear or make it “dirty”.
- - During and after sharpening, the lead did not break its integrity.
- - During and after sharpening, the pencil does not break or crumble.
- - The sharpened pencil is successfully functioning (you can write, sketch, draw).
+ - Make sure that the lead does not break or crumble directly during drawing.
+ - Make sure that the pencil can draw not only on paper but also on some alternative materials (cardboard, wood, walls, or floor). It can also be applicable to construction work.
+ - Make sure that during and after sharpening, the lead does not break its integrity.
+ - Make sure that during and after sharpening, the pencil does not break or crumble.
+ - Make sure that the sharpened pencil can successfully function (you can write, sketch, draw).
+ - Make sure that the eraser removes notes/sketches and does not smear or make them “dirty” in the process of erasing.
+ - Make sure that the eraser does not crumble when being used.
 
 #### Usability Testing
-- Is it comportable to hold a pencil? 
-- Does it not slip, nor does it fall out when using it?
-- Does it squeak while writing or does it write quietly?
-- How useful is the eraser on the end of the pencil?
-- The body shape is round, triangular, or hexagonal.
-- Pencil sharpens easily with a pencil sharpener.
+- Is it comfortable to hold a pencil? 
+- Does it not slip, nor does it fall out when being used?
+- Does it "squeak" while writing or does it write "quietly"?
+- Is the body shape round, triangular, or hexagonal.
+- Can the pencil be sharpenen easily with a pencil sharpener.
+- Do you have to write or draw for an extended period of time? If so, it may be better to choose a triangular pencil. However, overall, hexagonal pencils are more commonly used, more stable, and more comfortable for everyday use.
 
 #### Security Testing
- - Can I get hurt with a pencil (scratched, cut when sharpening)?
- - Is it safe to give a pencil to a child? There are “safe” types of pencils (for example, special “children” pencils, often with a triangular body) that can be given to children without fear (of course, depending on age, general development, and characteristics of the child).
- - Is the pencil safe for people with disabilities (eg visually impaired)? E.g. a pencil with a round body can pose a serious problem for a visually impaired person when rolled under a table. For the visually impaired the use of pencils with a hexagonal or triangular barrel is more appropriate.
+ - Can I get hurt with a pencil?
+ - Is it safe to give a pencil to a child? There are “safe” types of pencils (for example, special “children” pencils, often with a triangular body) that can be given to children without fear (of course this depends and should be treated case by case).
+ - Is the pencil safe for people with disabilities (such as visually impaired)? E.g. a pencil with a round body can pose a serious problem for a visually impaired person when it gets rolled under a table. For the visually impaired the use of pencils with a hexagonal or triangular shrank is more appropriate.
 
 #### Load Testing
 - Let’s check the behavior of the pencil when you press the pencil lead on the paper. Make sure the pencil won’t break.
 - Pull the pencil lead. It must not come out of the body.
 - Tap the pencil on the table several times. The lead should not crumble or break, fall out of the body, or crack.
-- After use, the eraser does not leave crumbs, does not fall out; the ferrule does not bend or leave marks or scratches on paper and hands. 
+- When being used, the eraser does not leave crumbs nor does it fall out. 
 
 #### Stress Testing
-- Drop the pencil on the floor a couple of times and check whether the lead breaks or crumbles. The pencil body must not be damaged.
-- Try to bend the pencil: will it break or not?
-- Chew on a pencil. It’s advisable that the end of the pencil stays not “eaten”. Many manufacturers pay special attention to this point.
-- Place the pencil in water, then dry it. It should be possible to use it normally for drawing / writing as before.
-- Place the pencil in the freezer for a while to freeze it. It should be possible to use it normally for drawing / writing as before.
+- Drop the pencil on the floor a couple of times and check if the lead gets broken or crumbles. The pencil body should not be damaged.
+- Try to bend the pencil and check whether it will break or not?
+- Place the pencil in water, then dry it. It should be possible to use it normally for drawing / writing as it was before.
+- Place the pencil in the freezer for a while and freeze it. It should be possible to use it normally for drawing / writing as before.
 - Use the eraser to rigorously to erase notes / sketches. The eraser head should not wear off quickly.
 
 #### Performance Testing
@@ -46,14 +46,14 @@
 
 ### 2. On the Main page of https://www.hepsiburada.com/ you can see the different Recommendations section with different products. These sections are also shown on Product Detail and Cart pages. What are these product suggestions, what is the rule for listing these products and showing them to the user? Full analysis is expected here.
 
-Product suggestions are served with the help of the recommendation algorithms. In this case, the product recommendations are made based on site bestsellers and general site data on products and visitors listing the products which are popular on the website. Seasonal products are also analyzed and taken into account, e.g. the "bikini" section. These products are fetched using the algorithm for anaylyzing the most purchased products during a season. E.g. the most sold items in summer are beach essentials, including beach towels, swimsuits, beach toys, sunglasses, flip-flops, and waterproof bags. The most viewed products are also presented and they can be viewed under the "Şu an çok bakılıyor" section. There are also bestsellers of the week, which are served in the "Haftanın çok satanları" section. In addition to that, the premium offers are shown in the "Premium fırsatları" section. 
+Product suggestions are served with the help of the recommendation algorithms. In this case, the product recommendations are made based on site bestsellers and general site data on products and visitors listing the products which are popular on the website. Seasonal products are also analyzed and taken into account, e.g. the "bikini" section. These products are fetched using the algorithm for anaylyzing the most purchased products during a season. E.g. the most sold items in the summer are beach essentials, including beach towels, swimsuits, beach toys, sunglasses, flip-flops, and waterproof bags. The most viewed products are also presented and they can be viewed under the "Şu an çok bakılıyor" section. There are also bestsellers of the week, which are served in the "Haftanın çok satanları" section. In addition to that, the premium offers are also there and these are shown in the "Premium fırsatları" section. 
 
 The description of the other product recommentations sections:
 
  - "Popüler ürünlerden seçtik": shows products popular on the website based on general site data on products and visitors.
  - "En Avantajlı Ürünler": shows products which have the best price with regard to the quality / price ratio including promotions.
  - "Süper Fiyat, Süper Teklif": shows products with the lowest prices including discounts and promotions.
- - "Popüler ürünlerden seçtik": this seems like a bug as this section gets duplicated twice: https://app.screencast.com/KhnJDJJwXUhIR
+ - "Popüler ürünlerden seçtik": this seems like a bug as this section gets duplicated twice. Please see the video: https://app.screencast.com/KhnJDJJwXUhIR
  - "Herkes bu ürünlerin peşinde": shows products which are the most needed based on general site data on products and visitors.
  - product categories ("Bikini", "Runner", "Giyim", "Çanta") list products, which are the most purchased on the website based on general site data on products and visitors.
  - "Popüler kategorilere özel indirimler": shows special discounts on popular product categories.
