@@ -1,74 +1,73 @@
 import allure
 from pytest import mark
 
-@mark.mobile
-@allure.title("Accept the use of cookies")
-def test_accept_cookies(mobile_app):
-    mobile_app.click_button("Accept cookies")
-    assert mobile_app.check_cookie_banner_not_exists()
 
 @mark.mobile
-@allure.title("Check Founders' section => check if all 3 founders' names are displayed")
-def test_founders(mobile_app):
-    mobile_app.click_button("Open Main Navigation")
-    mobile_app.click_button("Expand About Us")
-    mobile_app.navigate_to("Navigate to Leadership")
-
-    founder_names = "Dmitry Balyasny", "Taylor O'Malley", "Scott Schroeder"
-    for founder_name in founder_names:
-        assert mobile_app.leadership.check_founders_exist(founder_name)
+@allure.title("1. Visit https://useinsider.com/ and check Insider home page is opened or not.")
+def test_check_navigation(mobile_app):
+  
+  # Accept the use of cookies
+  mobile_app.click_button("Accept All")
+  # Check if the page is opened or not
+  assert mobile_app.check_if_page_opened("#desktop_hero_24")
 
 @mark.mobile
-@allure.title("Check 'Contact us' form => check required fields trigger validation errors")
-def test_validation(mobile_app):
-    mobile_app.navigate_to_footer('Contact us')
+@allure.title("2. Select “Company” menu in navigation bar, select “Careers” and check Career page, its Locations, Teams and Life at Insider blocks are opened or not.")
+def test_check_career_page(mobile_app):
+  mobile_app.click_link("Toggle navigation")
+  mobile_app.click_link("Company")
+  mobile_app.click_link("Careers")
+  location_names = "New York", "Sao Paulo", "London", "Paris", "Amsterdam", "Helsinki", "Warsaw", "Sydney", "Dubai", "Tokyo", "Seoul", "Singapore", "Bangkok", \
+                    "Jakarta", "Taipei", "Manila", "Kuala Lumpur", "Ho Chi Minh City", "Istanbul", "Ankara", "Mexico City", "Lima", "Buenos Aires", "Bogota",
+  
+  team_names = "Customer Success", "Sales", "Product & Engineering", "Finance & Business Support", "Marketing", "CEO’s Executive Office", "Purchasing & Operations",\
+                "People and Culture", "Business Intelligence", "Security Engineering", "Partnership", "Quality Assurance", "Mobile Business Unit", "Partner Support Development",\
+                "Product Design"
+
+# check 'Locations' section 
+  for location_name in location_names:
+    assert mobile_app.check_items_exist(location_name)
+
+# check 'Teams' section
+  mobile_app.click_link("See all teams")
+  for team_name in team_names:
+    assert mobile_app.check_items_exist(team_name)
+
+# check 'Life at Insider' section
+  assert mobile_app.check_text_in_section("Life at Insider We’re here to")
+
+@mark.mobile
+@allure.title("3. Go to https://useinsider.com/careers/quality-assurance/, click “See all QA jobs”, filter jobs by Location - Istanbul, Turkey  " \
+"and department - Quality Assurance, check presence of jobs list. " \
+"4. Check that all jobs’ Position contains “Quality Assurance”, Department contains “Quality Assurance”, Location contains “Istanbul, Turkey. " \
+"5. Click “View Role” button and check that this action redirects us to Lever Application form page.")
+def test_check_quality_assurance_page(mobile_app):
+    mobile_app.goto("/careers/quality-assurance")
+    mobile_app.click_link("See all QA jobs")
+
+    # filter all jobs by location
+    mobile_app.click_button("Filter")
+    mobile_app.choose_from_dropdown(locator= "//select[@name='filter-by-location']", label= "Istanbul, Turkiye")
+    
+    # filter all jobs by department
+    mobile_app.choose_from_dropdown(locator= "//select[@name='filter-by-department']", label= "Quality Assurance")
+    
     #This is needed because of the poor hydration of the page. 
-    #This means that the button is already shown while it is not yet ready to be clicked.
+    #This means that the data is not yet fetched to be checked in the next steps.
     mobile_app.wait_for_load_state()
-     #Trigger errors on the form
-    mobile_app.click_button('Submit')
-    validation_messages = "^First Name\*This field is required$", "^Last Name\*This field is required$", "^E-mail Address\*This field is required$",
-    "^Your Message\*This field is required$"
-    for validation_message in validation_messages:
-        assert mobile_app.contact_us.validate_contact_form(validation_message)
+    
+    # check presence of jobs list
+    open_positions = "Senior Software Quality Assurance Engineer", "Software Quality Assurance Engineer"
+    for open_position in open_positions:
+      assert mobile_app.check_items_exist(open_position)
+    
+    i = 1
+    while i < len(open_positions) +1:
 
-@mark.mobile
-@allure.title("Check 'Contact us' form => test invalid inputs (e.g. wrong email format) and verify correct error messages")
-def test_invalid_input(mobile_app):
-    mobile_app.navigate_to_footer('Contact us')
-    mobile_app.contact_us.fill_text("First Name*", "Ivan")
-    mobile_app.contact_us.fill_text("Last Name*", "Valchuk")
-    mobile_app.contact_us.fill_text("E-mail Address*", "ivan.valchuk@gmail.com")
-    mobile_app.contact_us.fill_text("Phone Number", "abcdef")
-    mobile_app.contact_us.fill_text("Your Message*", "Hello there!")
-    mobile_app.click_button('Submit')
-    #Change to the wrong email address
-    mobile_app.contact_us.fill_text("E-mail Address*", "ivan.valchukgmail.com")
-    validation_messages = "Invalid e-mail address", "Invalid phone number"
-    for validation_message in validation_messages:
-        assert mobile_app.contact_us.verify_correct_error_message(validation_message)
-
-@mark.mobile
-@allure.title("Check if the 'Contact us' form is protected by reCAPTCHA and cannot be submitted by a bot user")
-def test_submit_contact_form(mobile_app):
-    mobile_app.navigate_to_footer('Contact us')
-    mobile_app.contact_us.fill_text("First Name*", "John")
-    mobile_app.contact_us.fill_text("Last Name*", "Smith")
-    mobile_app.contact_us.fill_text("E-mail Address*", "test@test.com")
-    mobile_app.contact_us.fill_text("Phone Number", "+48513000333")
-    mobile_app.contact_us.fill_text("Your Message*", "This is a test, please disregard!")
-    mobile_app.click_button('Submit')
-    controller_names = "First Name*", "Last Name*", "E-mail Address*", "Phone Number", "Your Message*"
-    for controller_name in controller_names:
-        assert mobile_app.contact_us.verify_form_was_not_sent(controller_name)
-
-@mark.mobile
-@allure.title("Check locations => check if all 3 primary offices are displayed")
-def test_primary_offices(mobile_app):
-    mobile_app.click_button("Open Main Navigation")
-    mobile_app.click_button("Expand About Us")
-    mobile_app.navigate_to("Navigate to Locations")
-    location_names = "Aalborg", "Austin", "Boston", "Chicago", "Copenhagen", "Dubai", "Greenwich", "Hong Kong",
-    "Houston", "London", "Miami", "New York", "San Francisco", "Singapore", "Tokyo", "Toronto", "Warsaw"
-    for location_name in location_names:
-        assert mobile_app.locations.check_locations_exist(location_name)
+        assert mobile_app.check_value(f"#jobs-list > div:nth-child({i}) > div > p", "Quality Assurance")
+        assert mobile_app.check_value(f"#jobs-list > div:nth-child({i}) > div > span", "Quality Assurance")
+        assert mobile_app.check_value(f"#jobs-list > div:nth-child({i}) > div > div", "Istanbul, Turkiye")
+        i+=1
+        
+    # "Click “View Role” button and check that this action redirects us to Lever Application form page.")
+    assert mobile_app.check_if_redirection_happens("https://jobs.lever.co/useinsider/")

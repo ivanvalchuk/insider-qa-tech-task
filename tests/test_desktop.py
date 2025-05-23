@@ -1,69 +1,69 @@
 import allure
-from playwright.async_api import Page
 from pytest import mark
 
-@mark.desktop
-@allure.title("Accept the use of cookies")
-def test_accept_cookies(desktop_app):
-  desktop_app.click_button("Accept cookies")
-  assert desktop_app.check_cookie_banner_not_exists()
 
 @mark.desktop
-@allure.title("Check Founders' section => check if all 3 founders' names are displayed")
-def test_founders(desktop_app):
-    founder_names = "Dmitry Balyasny", "Taylor O'Malley", "Scott Schroeder"
-    desktop_app.hover_over('About us')
-    desktop_app.navigate_to_menu('Leadership')
-    for founder_name in founder_names:
-        assert desktop_app.leadership.check_founders_exist(founder_name)
+@allure.title("1. Visit https://useinsider.com/ and check Insider home page is opened or not.")
+def test_check_navigation(desktop_app):
+  
+  # Accept the use of cookies
+  desktop_app.click_button("Accept All")
+  # Check if the page is opened or not
+  assert desktop_app.check_if_page_opened("#desktop_hero_24")
 
 @mark.desktop
-@allure.title("Check 'Contact us' form => check required fields trigger validation errors")
-def test_validation(desktop_app):
-    desktop_app.navigate_to_footer('Contact Us')
-    #Trigger errors on the form
-    desktop_app.click_button('Submit')
-    validation_messages = "^First Name\*This field is required$", "^Last Name\*This field is required$", "^E-mail Address\*This field is required$",
-    "^Your Message\*This field is required$"
-    for validation_message in validation_messages:
-        assert desktop_app.contact_us.validate_contact_form(validation_message)
+@allure.title("2. Select “Company” menu in navigation bar, select “Careers” and check Career page, its Locations, Teams and Life at Insider blocks are opened or not.")
+def test_check_career_page(desktop_app):
+
+  desktop_app.hover_over("Company")
+  desktop_app.click_link_by_locator('css=.dropdown-sub >> text="Careers"')
+#   desktop_app.click_link("Careers")
+  location_names = "New York", "Sao Paulo", "London", "Paris", "Amsterdam", "Helsinki", "Warsaw", "Sydney", "Dubai", "Tokyo", "Seoul", "Singapore", "Bangkok", \
+                    "Jakarta", "Taipei", "Manila", "Kuala Lumpur", "Ho Chi Minh City", "Istanbul", "Ankara", "Mexico City", "Lima", "Buenos Aires", "Bogota",
+  
+  team_names = "Customer Success", "Sales", "Product & Engineering", "Finance & Business Support", "Marketing", "CEO’s Executive Office", "Purchasing & Operations",\
+                "People and Culture", "Business Intelligence", "Security Engineering", "Partnership", "Quality Assurance", "Mobile Business Unit", "Partner Support Development",\
+                "Product Design"
+
+# check 'Locations' section 
+  for location_name in location_names:
+    assert desktop_app.check_items_exist(location_name)
+
+# check 'Teams' section
+  desktop_app.click_link("See all teams")
+  for team_name in team_names:
+    assert desktop_app.check_items_exist(team_name)
+
+# check 'Life at Insider' section
+  assert desktop_app.check_text_in_section("Life at Insider We’re here to")
 
 @mark.desktop
-@allure.title("Check 'Contact us' form => test invalid inputs (e.g. wrong email format) and verify correct error messages")
-def test_invalid_input(desktop_app):
-    desktop_app.navigate_to_footer('Contact Us')
-    desktop_app.contact_us.fill_text("First Name*", "Ivan")
-    desktop_app.contact_us.fill_text("Last Name*", "Valchuk")
-    desktop_app.contact_us.fill_text("E-mail Address*", "ivan.valchuk@gmail.com")
-    desktop_app.contact_us.fill_text("Phone Number", "abcdef")
-    desktop_app.contact_us.fill_text("Your Message*", "Hello there!")
-    desktop_app.click_button('Submit')
-    #changing to the wrong email address
-    desktop_app.contact_us.fill_text("E-mail Address*", "ivan.valchukgmail.com")
-    validation_messages = "Invalid e-mail address", "Invalid phone number"
-    for validation_message in validation_messages:
-        assert desktop_app.contact_us.verify_correct_error_message(validation_message)
+@allure.title("3. Go to https://useinsider.com/careers/quality-assurance/, click “See all QA jobs”, filter jobs by Location - Istanbul, Turkey  " \
+"and department - Quality Assurance, check presence of jobs list. " \
+"4. Check that all jobs’ Position contains “Quality Assurance”, Department contains “Quality Assurance”, Location contains “Istanbul, Turkey. " \
+"5. Click “View Role” button and check that this action redirects us to Lever Application form page.")
+def test_check_quality_assurance_page(desktop_app):
+    desktop_app.goto("/careers/quality-assurance")
+    desktop_app.click_link("See all QA jobs")
 
-@mark.desktop
-@allure.title("Check if the 'Contact us' form is protected by reCAPTCHA and cannot be submitted by a bot user")
-def test_submit_contact_form(desktop_app):
-    desktop_app.navigate_to_footer('Contact Us')
-    desktop_app.contact_us.fill_text("First Name*", "John")
-    desktop_app.contact_us.fill_text("Last Name*", "Smith")
-    desktop_app.contact_us.fill_text("E-mail Address*", "test@test.com")
-    desktop_app.contact_us.fill_text("Phone Number", "+48513000333")
-    desktop_app.contact_us.fill_text("Your Message*", "This is a test, please disregard!")
-    desktop_app.click_button('Submit')
-    controller_names = "First Name*", "Last Name*", "E-mail Address*", "Phone Number", "Your Message*"
-    for controller_name in controller_names:
-        assert desktop_app.contact_us.verify_form_was_not_sent(controller_name)
+    # filter all jobs by location
+    desktop_app.choose_from_dropdown(locator= "//select[@name='filter-by-location']", label= "Istanbul, Turkiye")
+    
+    # filter all jobs by department
+    desktop_app.choose_from_dropdown(locator= "//select[@name='filter-by-department']", label= "Quality Assurance")
+    
+    # check presence of jobs list
+    open_positions = "Senior Software Quality Assurance Engineer", "Software Quality Assurance Engineer"
+    for open_position in open_positions:
+      assert desktop_app.check_items_exist(open_position)
+    
+    i = 1
+    while i < len(open_positions) +1:
 
-@mark.desktop
-@allure.title("Check locations => check if all primary offices are displayed")
-def test_primary_offices(desktop_app):
-    desktop_app.hover_over('About us')
-    desktop_app.navigate_to_menu('Locations')
-    location_names = "Aalborg", "Austin", "Boston", "Chicago", "Copenhagen", "Dubai", "Greenwich", "Hong Kong",
-    "Houston", "London", "Miami", "New York", "San Francisco", "Singapore", "Tokyo", "Toronto", "Warsaw"
-    for location_name in location_names:
-        assert desktop_app.locations.check_locations_exist(location_name)
+        assert desktop_app.check_value(f"#jobs-list > div:nth-child({i}) > div > p", "Quality Assurance")
+        assert desktop_app.check_value(f"#jobs-list > div:nth-child({i}) > div > span", "Quality Assurance")
+        assert desktop_app.check_value(f"#jobs-list > div:nth-child({i}) > div > div", "Istanbul, Turkiye")
+        i+=1
+        
+    # "Click “View Role” button and check that this action redirects us to Lever Application form page.")
+    assert desktop_app.check_if_redirection_happens("https://jobs.lever.co/useinsider/")

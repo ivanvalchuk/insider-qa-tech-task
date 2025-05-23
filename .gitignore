@@ -4,5 +4,5 @@ report/
 
 # ignore files:
 settings.json
-report.html
+# report.html
 style.css

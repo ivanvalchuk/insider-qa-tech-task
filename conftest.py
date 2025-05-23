@@ -24,7 +24,7 @@ def get_browser(get_playwright, request):
     else:
         headless = False
     if browser == 'chromium':
-        bro = get_playwright.chromium.launch(headless = headless)
+        bro = get_playwright.chromium.launch(headless = headless, slow_mo = 2000)
     elif browser == 'firefox':
         bro = get_playwright.firefox.launch(headless = headless)
     elif browser == 'webkit':
