@@ -46,12 +46,16 @@ def test_check_quality_assurance_page(desktop_app):
     desktop_app.goto("/careers/quality-assurance")
     desktop_app.click_link("See all QA jobs")
 
+    #This is needed because of the poor hydration of the page. 
+    #This means that the data is not yet fetched to be checked in the next steps.
+    desktop_app.wait_for_load_state()
+
     # filter all jobs by location
     desktop_app.choose_from_dropdown(locator= "//select[@name='filter-by-location']", label= "Istanbul, Turkiye")
     
     # filter all jobs by department
     desktop_app.choose_from_dropdown(locator= "//select[@name='filter-by-department']", label= "Quality Assurance")
-    
+
     # check presence of jobs list
     open_positions = "Senior Software Quality Assurance Engineer", "Software Quality Assurance Engineer"
     for open_position in open_positions:
