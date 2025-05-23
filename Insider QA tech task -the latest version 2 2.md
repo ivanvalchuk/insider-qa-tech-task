@@ -77,7 +77,7 @@ Please see the "README.md" file for information.
 ### 4. Test Automation - API
 Using “pet” endpoints from https://petstore.swagger.io/ write CRUD operations API tests with positive and negative scenarios.
 
-#### Positive scenarios:
+#### Positive scenarios
 
 ##### 200 OK: 
 
@@ -138,6 +138,7 @@ curl -X 'DELETE' \
   'https://petstore.swagger.io/v2/pet/23' \
   -H 'accept: application/json'
 
+#### Negative scenarios
 
 ##### 404 Not found:
 curl -X 'GET' \
