@@ -11,16 +11,16 @@
             "skipped": 0,
             "pending": 0,
             "other": 0,
-            "start": 1748014840.04893,
-            "stop": 1748014899.8802729
+            "start": 1748026403.318358,
+            "stop": 1748026463.562312
         },
         "tests": [
             {
                 "name": "tests/test_desktop.py::test_check_navigation",
                 "status": "passed",
-                "duration": 6.81150000001071,
-                "start": 1748014840.059548,
-                "stop": 1748014846.871419,
+                "duration": 6.549907666980289,
+                "start": 1748026403.328217,
+                "stop": 1748026409.878716,
                 "retries": 0,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
@@ -30,9 +30,9 @@
             {
                 "name": "tests/test_desktop.py::test_check_career_page",
                 "status": "passed",
-                "duration": 7.461581125011435,
-                "start": 1748014846.871914,
-                "stop": 1748014854.33375,
+                "duration": 7.487429167988012,
+                "start": 1748026409.879505,
+                "stop": 1748026417.36716,
                 "retries": 0,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
@@ -42,9 +42,9 @@
             {
                 "name": "tests/test_desktop.py::test_check_quality_assurance_page",
                 "status": "passed",
-                "duration": 15.460625458013965,
-                "start": 1748014854.334625,
-                "stop": 1748014869.795626,
+                "duration": 14.811824834003346,
+                "start": 1748026417.368085,
+                "stop": 1748026432.180203,
                 "retries": 0,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
@@ -54,9 +54,9 @@
             {
                 "name": "tests/test_mobile.py::test_check_navigation",
                 "status": "passed",
-                "duration": 5.978255082969554,
-                "start": 1748014869.796343,
-                "stop": 1748014875.774872,
+                "duration": 5.9924784589675255,
+                "start": 1748026432.1810508,
+                "stop": 1748026438.1738722,
                 "retries": 0,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
@@ -66,9 +66,9 @@
             {
                 "name": "tests/test_mobile.py::test_check_career_page",
                 "status": "passed",
-                "duration": 9.465179126011208,
-                "start": 1748014875.775319,
-                "stop": 1748014885.240735,
+                "duration": 9.584409541013883,
+                "start": 1748026438.1745348,
+                "stop": 1748026447.759171,
                 "retries": 0,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
@@ -78,9 +78,9 @@
             {
                 "name": "tests/test_mobile.py::test_check_quality_assurance_page",
                 "status": "passed",
-                "duration": 14.637915374012664,
-                "start": 1748014885.241485,
-                "stop": 1748014899.879669,
+                "duration": 15.80154016695451,
+                "start": 1748026447.759885,
+                "stop": 1748026463.561686,
                 "retries": 0,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
