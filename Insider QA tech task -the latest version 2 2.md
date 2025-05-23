@@ -205,5 +205,4 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d ''\''{ "id": 23,
-
     }'\'''
