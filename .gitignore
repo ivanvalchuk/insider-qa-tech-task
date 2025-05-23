@@ -1,9 +1,8 @@
 # ignore directories:
 __pycache__/
-report/
-report.html
 
 # ignore files:
 settings.json
-# report.html
+report.json
+report.html
 style.css
