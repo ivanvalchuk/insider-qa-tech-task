@@ -27,14 +27,6 @@ class App:
     @allure.step
     def click_link_by_locator(self, locator: str):
         self.page.locator(locator).click()
-    
-    @allure.step
-    def click_textbox(self, locator: str):  
-        return self.page.locator(locator).click()
-    
-    @allure.step
-    def check_cookie_banner_not_exists(self):
-        return self.page.get_by_role("dialog", name="cookieconsent").is_visible() is False
 
     @allure.step
     def check_if_page_opened(self, locator: str):

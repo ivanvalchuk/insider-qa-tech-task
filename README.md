@@ -13,21 +13,21 @@
 3. The tests are located as follows:
 - "./tests/test_desktop.py" contains test cases for running on Desktop.
 - "./tests/test_mobile.py" contains test cases for running on Mobile.
-4. Page objects can be found under the "./page_objects" folder.
-5. Pytest fixtures can be checked under the "./conftest.py" folder.
+4. Page objects can be found in the "./application.py" folder.
+5. Pytest fixtures can be checked in the "./conftest.py" file.
 
 #### Running intstructions
 - "pytest" - runs the tests on both Desktop browsers and mobile.
 - "pytest -m desktop" - runs the tests on Desktop browsers (e.g. Chromium).
 - "pytest -m mobile" - runs the tests on emualated mobile devices (e.g. iPhone 15).
 - "pytest -m desktop --lf" / "pytest -m mobile --lf" - re-runs the previous failed tests for Desktop / Mobile.
-By default, the tests are run in the 'headless' mode and on Chromium browser on Desktop and iPhone 15. In order to change to the 'headed'  mode, please change this in "./pytest.ini" by setting 'headless' to 'False'. Adding support for other browsers (Firefox, Webkit)
-can be done in the "./conftest" file by adding them to the params of the corresponding fixtures, e.g. params = ['firefox', 'webkit', 'Galaxy S9'], params = ['iPhone 14', 'Pixel 7'].
+By default, the tests are run in the 'headed' mode and on Chromium browser on Desktop and iPhone 15. In order to change to the 'headless'  mode, please change this in "./pytest.ini" by setting 'headless' to 'True'. Adding support for other browsers (Firefox, Webkit) can be done in the "./conftest.py" file by adding them to the params of the corresponding fixtures, e.g. params = ['firefox', 'webkit', 'Galaxy S9'], params = ['iPhone 14', 'Pixel 7'].
+For convenience, the tests are run in the slow mode, which can also be adjusted in the "./conftest.py" file by removing / modifying the value for "slow_mo" under the "get_browser" fixture.
 
 #### How to set up reporting
 1. Install the plugin for Allure reporting using "pip install allure-pytest".
 2. Install Allure via "brew install allure" for Mac or check https://allurereport.org/docs/install for other operating systems.
-3. "cd" to the folder "ui-automation-task".
+3. "cd" to the folder "insider-qa-tech-task".
 4. Run the command for generating the report: "allure serve report" and the report will be opened in a separate tab of the browser.
 5. A generated test report can also be found under the "Actions" tab at https://github.com/ivanvalchuk/ui-automation-task 
    Click on a corresponding workflow run to see the details. 

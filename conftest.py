@@ -3,7 +3,7 @@ import pytest
 import allure
 from pytest import fixture, hookimpl
 from playwright.sync_api import sync_playwright
-from page_objects.application import App
+from application import App
 
 
 @fixture(scope='session')
