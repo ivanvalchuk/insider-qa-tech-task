@@ -9,6 +9,7 @@ from application import App
 @fixture(scope='session')
 def get_playwright():
     with sync_playwright() as playwright:
+        playwright.selectors.set_test_id_attribute("data-id")
         yield playwright
 
 @fixture(scope= 'session', params= ['chromium'], ids=['chromium'])
@@ -35,6 +36,7 @@ def get_browser(get_playwright, request):
     yield bro
     bro.close()
     del os.environ['PWBROWSER']
+
 
 @fixture(scope='session')
 def desktop_app(get_browser, request):

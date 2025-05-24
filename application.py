@@ -21,28 +21,28 @@ class App:
         self.page.get_by_role("button", name = button).click()
     
     @allure.step
-    def click_link(self, label: str):
-        self.page.get_by_role("link", name = label).click()
+    def click_link(self, link: str):
+        self.page.get_by_role("link", name = link).click()
 
     @allure.step
-    def click_link_by_locator(self, locator: str):
-        self.page.locator(locator).click()
-
-    @allure.step
-    def check_if_page_opened(self, locator: str):
+    def check_if_element_visible(self, locator: str):
         return self.page.locator(locator).is_visible()
     
     @allure.step
-    def hover_over(self, label: str):
-        self.page.get_by_role("link", name = label).hover()
+    def hover_over(self, link: str):
+        self.page.get_by_role("link", name = link).hover()
     
     @allure.step
-    def check_items_exist(self, name: str):
-        return self.page.get_by_text(name, exact= True).first.is_visible()
+    def check_locations_exist(self, name: str):
+        return self.page.get_by_role("listitem").filter(has_text= name).is_visible()
     
     @allure.step
-    def check_value(self, name: str, text: str):
-        return self.page.locator(name).filter(has_text= text).is_visible()
+    def check_teams_exist(self, name: str):
+        return self.page.get_by_role("heading", name= name).is_visible()
+    
+    @allure.step
+    def check_value(self, locator: str, text: str):
+        return self.page.locator(locator).filter(has_text= text).is_visible()
 
     @allure.step
     def check_if_redirection_happens(self, url_name: str):
@@ -52,16 +52,12 @@ class App:
         return url_name in self.new_page.url
 
     @allure.step
-    def check_text_in_section(self, name: str):
-        return self.page.locator("section").filter(has_text = name).is_visible()
+    def retrieve_element_by_testid(self, data_id:str):
+        return self.page.get_by_test_id(data_id).is_visible()
     
     @allure.step
     def choose_from_dropdown(self, locator: str, label: str):
-        self.page.locator(locator).select_option(label)
-    
-    @allure.step
-    def wait_for_load_state(self):
-        self.page.wait_for_load_state('domcontentloaded')
+        self.page.locator(locator).select_option(label= label)
 
     def close(self):
         self.page.close()   

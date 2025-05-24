@@ -7,16 +7,16 @@ from pytest import mark
 def test_check_navigation(mobile_app):
   
   # Accept the use of cookies
-  mobile_app.click_button("Accept All")
+  mobile_app.click_button(button= "Accept All")
   # Check if the page is opened or not
-  assert mobile_app.check_if_page_opened("#desktop_hero_24")
+  assert mobile_app.check_if_element_visible(locator= "#desktop_hero_24")
 
 @mark.mobile
 @allure.title("2. Select “Company” menu in navigation bar, select “Careers” and check Career page, its Locations, Teams and Life at Insider blocks are opened or not.")
 def test_check_career_page(mobile_app):
-  mobile_app.click_link("Toggle navigation")
-  mobile_app.click_link("Company")
-  mobile_app.click_link("Careers")
+  mobile_app.click_link(link= "Toggle navigation")
+  mobile_app.click_link(link= "Company")
+  mobile_app.click_link(link= "Careers")
   location_names = "New York", "Sao Paulo", "London", "Paris", "Amsterdam", "Helsinki", "Warsaw", "Sydney", "Dubai", "Tokyo", "Seoul", "Singapore", "Bangkok", \
                     "Jakarta", "Taipei", "Manila", "Kuala Lumpur", "Ho Chi Minh City", "Istanbul", "Ankara", "Mexico City", "Lima", "Buenos Aires", "Bogota",
   
@@ -26,15 +26,15 @@ def test_check_career_page(mobile_app):
 
 # check 'Locations' section 
   for location_name in location_names:
-    assert mobile_app.check_items_exist(location_name)
+    assert mobile_app.check_locations_exist(location_name)
 
 # check 'Teams' section
-  mobile_app.click_link("See all teams")
+  mobile_app.click_link(link= "See all teams")
   for team_name in team_names:
-    assert mobile_app.check_items_exist(team_name)
+    assert mobile_app.check_teams_exist(team_name)
 
 # check 'Life at Insider' section
-  assert mobile_app.check_text_in_section("Life at Insider We’re here to")
+  assert mobile_app.retrieve_element_by_testid(data_id= "a8e7b90")
 
 @mark.mobile
 @allure.title("3. Go to https://useinsider.com/careers/quality-assurance/, click “See all QA jobs”, filter jobs by Location - Istanbul, Turkey  " \
@@ -43,7 +43,7 @@ def test_check_career_page(mobile_app):
 "5. Click “View Role” button and check that this action redirects us to Lever Application form page.")
 def test_check_quality_assurance_page(mobile_app):
     mobile_app.goto("/careers/quality-assurance")
-    mobile_app.click_link("See all QA jobs")
+    mobile_app.click_link(link= "See all QA jobs")
 
     # filter all jobs by location
     mobile_app.click_button("Filter")
@@ -52,15 +52,15 @@ def test_check_quality_assurance_page(mobile_app):
     # filter all jobs by department
     mobile_app.choose_from_dropdown(locator= "//select[@name='filter-by-department']", label= "Quality Assurance")
     
-    #This is needed because of the poor hydration of the page. 
-    #This means that the data is not yet fetched to be checked in the next steps.
-    mobile_app.wait_for_load_state()
-    
     # check presence of jobs list
     open_positions = "Senior Software Quality Assurance Engineer", "Software Quality Assurance Engineer"
-    for open_position in open_positions:
-      assert mobile_app.check_items_exist(open_position)
     
+    i = 1
+    while i < len(open_positions) +1:
+      assert mobile_app.check_value(locator= f"#jobs-list > div:nth-child({i}) > div > p", text= open_positions[i-1])
+      i+=1
+    
+    # Check that all jobs’ Position contains “Quality Assurance”, Department contains “Quality Assurance”, Location contains “Istanbul, Turkey.
     i = 1
     while i < len(open_positions) +1:
 
