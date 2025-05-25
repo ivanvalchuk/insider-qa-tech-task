@@ -9,7 +9,7 @@ def test_check_navigation(desktop_app):
   # Accept the use of cookies
   desktop_app.click_button("Accept All")
   # Check if the page is opened or not
-  assert desktop_app.check_if_element_visible(locator= "#desktop_hero_24")
+  assert desktop_app.check_if_element_visible(selector= "#desktop_hero_24")
 
 @mark.desktop
 @allure.title("2. Select “Company” menu in navigation bar, select “Careers” and check Career page, its Locations, Teams and Life at Insider blocks are opened or not.")
@@ -47,31 +47,31 @@ def test_check_quality_assurance_page(desktop_app):
     desktop_app.click_link(link= "See all QA jobs")
     
     # filter all jobs by location
-    desktop_app.choose_from_dropdown(locator= "//select[@name='filter-by-location']", label= "Istanbul, Turkiye")
+    desktop_app.choose_from_dropdown(selector= "//select[@name='filter-by-location']", label= "Istanbul, Turkiye")
     
     # filter all jobs by department
-    desktop_app.choose_from_dropdown(locator= "//select[@name='filter-by-department']", label= "Quality Assurance")
+    desktop_app.choose_from_dropdown(selector= "//select[@name='filter-by-department']", label= "Quality Assurance")
 
     # check presence of jobs list
     open_positions = "Senior Software Quality Assurance Engineer", "Software Quality Assurance Engineer"
     
     i = 1
     while i < len(open_positions) +1:
-      assert desktop_app.check_value_equals(locator= f"#jobs-list > div:nth-child({i}) > div > p", value= open_positions[i-1])
+      assert desktop_app.check_value_equals(selector= f"#jobs-list > div:nth-child({i}) > div > p", value= open_positions[i-1])
       i += 1
 
     # Check that all jobs’ Position contains “Quality Assurance”, Department contains “Quality Assurance”, Location contains “Istanbul, Turkey.
     i = 1
     while i < len(open_positions) +1:
 
-        assert desktop_app.check_value_contains(locator= f"#jobs-list > div:nth-child({i}) > div > p", value= "Quality Assurance")
-        assert desktop_app.check_value_contains(locator= f"#jobs-list > div:nth-child({i}) > div > span", value= "Quality Assurance")
-        assert desktop_app.check_value_contains(locator= f"#jobs-list > div:nth-child({i}) > div > div", value= "Istanbul, Turkiye")
+        assert desktop_app.check_value_contains(selector= f"#jobs-list > div:nth-child({i}) > div > p", value= "Quality Assurance")
+        assert desktop_app.check_value_contains(selector= f"#jobs-list > div:nth-child({i}) > div > span", value= "Quality Assurance")
+        assert desktop_app.check_value_contains(selector= f"#jobs-list > div:nth-child({i}) > div > div", value= "Istanbul, Turkiye")
         i += 1
         
     # "Click “View Role” button and check that this action redirects us to Lever Application form page.")
     i = 1
     while i < len(open_positions) +1:
     
-      assert desktop_app.check_if_redirection_happens(locator= f"#jobs-list > div:nth-child({i}) > div > a", url_name= "https://jobs.lever.co/useinsider/")
+      assert desktop_app.check_if_redirection_happens(selector= f"#jobs-list > div:nth-child({i}) > div > a", url_name= "https://jobs.lever.co/useinsider/")
       i += 1

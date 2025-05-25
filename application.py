@@ -25,8 +25,8 @@ class App:
         self.page.get_by_role("link", name = link).click()
 
     @allure.step
-    def check_if_element_visible(self, locator: str):
-        return self.page.locator(locator).is_visible()
+    def check_if_element_visible(self, selector: str):
+        return self.page.locator(selector).is_visible()
     
     @allure.step
     def hover_over(self, link: str):
@@ -41,19 +41,19 @@ class App:
         return self.page.get_by_role("heading", name= name).is_visible()
     
     @allure.step
-    def check_value_equals(self, locator: str, value: str):
-        retreived_value = self.page.locator(locator).inner_text()
+    def check_value_equals(self, selector: str, value: str):
+        retreived_value = self.page.locator(selector).inner_text()
         return value == retreived_value
     
     @allure.step
-    def check_value_contains(self, locator: str, value: str):
-        retreived_value = self.page.locator(locator).inner_text()
+    def check_value_contains(self, selector: str, value: str):
+        retreived_value = self.page.locator(selector).inner_text()
         return value in retreived_value
     
     @allure.step
-    def check_if_redirection_happens(self, locator: str, url_name: str):
+    def check_if_redirection_happens(self, selector: str, url_name: str):
         with self.context.expect_page() as new_page_info:
-            self.page.locator(locator).click()
+            self.page.locator(selector).click()
         self.new_page = new_page_info.value
         return url_name in self.new_page.url
     
@@ -63,8 +63,8 @@ class App:
         return self.page.get_by_test_id(data_id).is_visible()
     
     @allure.step
-    def choose_from_dropdown(self, locator: str, label: str):
-        self.page.locator(locator).select_option(label= label)
+    def choose_from_dropdown(self, selector: str, label: str):
+        self.page.locator(selector).select_option(label= label)
 
     def close(self):
         self.page.close()   
