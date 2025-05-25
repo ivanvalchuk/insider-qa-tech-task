@@ -41,15 +41,22 @@ class App:
         return self.page.get_by_role("heading", name= name).is_visible()
     
     @allure.step
-    def check_value(self, locator: str, text: str):
-        return self.page.locator(locator).filter(has_text= text).is_visible()
-
+    def check_value_equals(self, locator: str, value: str):
+        retreived_value = self.page.locator(locator).inner_text()
+        return value == retreived_value
+    
     @allure.step
-    def check_if_redirection_happens(self, url_name: str):
+    def check_value_contains(self, locator: str, value: str):
+        retreived_value = self.page.locator(locator).inner_text()
+        return value in retreived_value
+    
+    @allure.step
+    def check_if_redirection_happens(self, locator: str, url_name: str):
         with self.context.expect_page() as new_page_info:
-            self.page.get_by_role("link", name = "View Role").first.click()
+            self.page.locator(locator).click()
         self.new_page = new_page_info.value
         return url_name in self.new_page.url
+    
 
     @allure.step
     def retrieve_element_by_testid(self, data_id:str):
