@@ -5,87 +5,99 @@
             "version": "8.3.3"
         },
         "summary": {
-            "tests": 6,
-            "passed": 3,
+            "tests": 7,
+            "passed": 7,
             "failed": 0,
-            "skipped": 3,
+            "skipped": 0,
             "pending": 0,
             "other": 0,
-            "start": 1748522851.900277,
-            "stop": 1748522970.6935208
+            "start": 1748547321.2837062,
+            "stop": 1748547327.252575
         },
         "tests": [
             {
-                "name": "tests/test_desktop.py::test_check_navigation",
+                "name": "tests/test_API.py::test_get_pets_by_status",
                 "status": "passed",
-                "duration": 6.318998292030301,
-                "start": 1748522851.922993,
-                "stop": 1748522858.241874,
-                "file_path": "tests/test_desktop.py",
+                "duration": 0.9020464170025662,
+                "start": 1748547321.3453162,
+                "stop": 1748547322.247814,
+                "retries": 0,
+                "file_path": "tests/test_API.py",
                 "tags": [
-                    "desktop"
+                    "api"
                 ]
             },
             {
-                "name": "tests/test_desktop.py::test_check_career_page",
+                "name": "tests/test_API.py::test_update_pet",
                 "status": "passed",
-                "duration": 6.474234915978741,
-                "start": 1748522858.243398,
-                "stop": 1748522864.717376,
-                "file_path": "tests/test_desktop.py",
+                "duration": 0.510963833949063,
+                "start": 1748547322.248619,
+                "stop": 1748547322.759825,
+                "retries": 0,
+                "file_path": "tests/test_API.py",
                 "tags": [
-                    "desktop"
+                    "api"
                 ]
             },
             {
-                "name": "tests/test_desktop.py::test_check_quality_assurance_page",
+                "name": "tests/test_API.py::test_create_pet",
                 "status": "passed",
-                "duration": 15.465265750943217,
-                "start": 1748522864.718313,
-                "stop": 1748522880.183549,
-                "file_path": "tests/test_desktop.py",
+                "duration": 0.49624266696628183,
+                "start": 1748547322.760254,
+                "stop": 1748547323.2571971,
+                "retries": 0,
+                "file_path": "tests/test_API.py",
                 "tags": [
-                    "desktop"
+                    "api"
                 ]
             },
             {
-                "name": "tests/test_mobile.py::test_check_navigation",
-                "status": "skipped",
-                "duration": 5.394234041974414,
-                "start": 1748522880.1860778,
-                "stop": 1748522885.580508,
-                "retries": 3,
-                "file_path": "tests/test_mobile.py",
+                "name": "tests/test_API.py::test_get_pet",
+                "status": "passed",
+                "duration": 0.49746445793425664,
+                "start": 1748547323.258507,
+                "stop": 1748547323.756475,
+                "file_path": "tests/test_API.py",
                 "tags": [
-                    "mobile"
-                ],
-                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 5, 'Skipped')"
+                    "parametrize::pet_id, status_code::[(99, 200), (999, 404)]",
+                    "api"
+                ]
             },
             {
-                "name": "tests/test_mobile.py::test_check_career_page",
-                "status": "skipped",
-                "duration": 8.47725574998185,
-                "start": 1748522885.581514,
-                "stop": 1748522894.058839,
-                "retries": 3,
-                "file_path": "tests/test_mobile.py",
+                "name": "tests/test_API.py::test_delete_pet",
+                "status": "passed",
+                "duration": 0.49983979103853926,
+                "start": 1748547324.254723,
+                "stop": 1748547324.755252,
+                "file_path": "tests/test_API.py",
                 "tags": [
-                    "mobile"
-                ],
-                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 14, 'Skipped')"
+                    "parametrize::pet_id, status_code::[(99, 200), (999, 404)]",
+                    "api"
+                ]
             },
             {
-                "name": "tests/test_mobile.py::test_check_quality_assurance_page",
-                "status": "skipped",
-                "duration": 15.202820957929362,
-                "start": 1748522894.0596638,
-                "stop": 1748522909.262935,
-                "retries": 3,
-                "file_path": "tests/test_mobile.py",
+                "name": "tests/test_API.py::test_create_list_of_users",
+                "status": "passed",
+                "duration": 0.5004786670324393,
+                "start": 1748547325.250884,
+                "stop": 1748547325.752151,
+                "file_path": "tests/test_API.py",
                 "tags": [
-                    "mobile"
-                ],
-                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 39, 'Skipped')"
+                    "parametrize::request_body, status_code::[([{'id': 0, 'username': 'ivalchuk', 'firstName': 'Ivan', 'lastName': 'Valchuk', 'email': 'ivan.valchuk@gmail.com', 'password': '', 'phone': '+342344324324'}], 200), ('{\"id\": 23, \"category\": {\"id\": 5, \"name\": \"Ivan Valchuk\"}}', 500)]",
+                    "api"
+                ]
+            },
+            {
+                "name": "tests/test_API.py::test_create_order_for_pet",
+                "status": "passed",
+                "duration": 0.4957225829712115,
+                "start": 1748547326.253747,
+                "stop": 1748547326.7501702,
+                "file_path": "tests/test_API.py",
+                "tags": [
+                    "parametrize::request_body, status_code::[({'id': 0, 'petId': 0, 'quantity': 0, 'shipDate': '2025-05-29T18:04:43.451Z', 'status': 'placed', 'complete': True}, 200), ({'id:': 0, 'petId': 0, 'quantity': 0, 'shipDate': '2025-29T18:04:43.451Z', 'status': 'placed', 'complete': True}, 500)]",
+                    "api"
+                ]
             }
         ]
     }
