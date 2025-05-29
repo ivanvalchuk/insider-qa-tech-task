@@ -16,7 +16,7 @@
 4. Page objects can be found in the "./page_objects" folder.
 5. Pytest fixtures can be checked out in the "./conftest.py" file.
 
-##### P.S. For better maintainability of the tests for mobile and desktop platforms and a more convenient way of running them, it was decided not to combine them in one file.
+P.S. For better maintainability of the tests for mobile and desktop platforms and a more convenient way of running them, it was decided not to combine them in one file.
 
 #### Running intstructions
 - "pytest" - runs the tests on both Desktop browsers and mobile.
