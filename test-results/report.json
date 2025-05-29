@@ -5,52 +5,15 @@
             "version": "8.3.3"
         },
         "summary": {
-            "tests": 3,
+            "tests": 0,
             "passed": 0,
             "failed": 0,
-            "skipped": 3,
+            "skipped": 0,
             "pending": 0,
             "other": 0,
-            "start": 1748522348.66698,
-            "stop": 1748522379.500997
+            "start": 1748522733.061261,
+            "stop": 1748522733.079374
         },
-        "tests": [
-            {
-                "name": "tests/test_mobile.py::test_check_navigation",
-                "status": "skipped",
-                "duration": 6.230134373938199,
-                "start": 1748522348.689596,
-                "stop": 1748522354.920458,
-                "file_path": "tests/test_mobile.py",
-                "tags": [
-                    "mobile"
-                ],
-                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 5, 'Skipped')"
-            },
-            {
-                "name": "tests/test_mobile.py::test_check_career_page",
-                "status": "skipped",
-                "duration": 8.490953082917258,
-                "start": 1748522354.921419,
-                "stop": 1748522363.412619,
-                "file_path": "tests/test_mobile.py",
-                "tags": [
-                    "mobile"
-                ],
-                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 14, 'Skipped')"
-            },
-            {
-                "name": "tests/test_mobile.py::test_check_quality_assurance_page",
-                "status": "skipped",
-                "duration": 15.127188958984334,
-                "start": 1748522363.413436,
-                "stop": 1748522378.541343,
-                "file_path": "tests/test_mobile.py",
-                "tags": [
-                    "mobile"
-                ],
-                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 39, 'Skipped')"
-            }
-        ]
+        "tests": []
     }
 }
