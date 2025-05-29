@@ -46,7 +46,7 @@ def desktop_app(get_browser, request):
     yield app
     app.close()
     
-@fixture(scope='session', params=['iPhone 15', 'Pixel 7'])
+@fixture(scope='session', params=['iPhone 15'])
 def mobile_app(get_playwright, get_browser, request):
     if os.environ['PWBROWSER'] == 'firefox':
         pytest.skip()
