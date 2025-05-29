@@ -19,9 +19,9 @@
 P.S. For better maintainability of the tests for mobile and desktop platforms and a more convenient way of running them, it was decided not to combine them in one file.
 
 #### Running intstructions
-- "pytest" - runs the tests on Desktop browsers, mobile and performs API tests.
-- "pytest -m desktop" - runs the tests on Desktop browsers (e.g. Chromium).
-- "pytest -m mobile" - runs the tests on emualated mobile devices (e.g. iPhone 15).
+- "pytest" - runs the tests on Desktop and Mobile browsers and performs API tests.
+- "pytest -m desktop" - runs the tests on Desktop browsers (e.g. Chromium and Firefox).
+- "pytest -m mobile" - runs the tests on emualated mobile devices (e.g. iPhone 15 and Pixel 7).
 - "pytest -m api" - runs auto tests for API.
 ![alt text](image-3.png)
 - "pytest -m desktop --lf" / "pytest -m mobile --lf" - re-runs the previous failed tests for Desktop / Mobile.
