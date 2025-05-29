@@ -31,9 +31,9 @@ For convenience, the tests are run in the slow mode, which can also be adjusted 
 2. Install Allure via "brew install allure" for Mac or check https://allurereport.org/docs/install for other operating systems.
 3. "cd" to the folder "insider-qa-tech-task".
 4. Run the command for generating the report: "allure serve report" and the report will be opened in a separate tab of the browser.
-![alt text](image.png)
+![alt text](image-6.png)
 5. Screenshots for the failed tests are taken and recoded in the Allure report, which can be seen as follows:
-![alt text](image-5.png)
+![alt text](image.png)
 6. A generated test report through "GitHub" actions can be found under the "Actions" tab at https://github.com/ivanvalchuk/insider-qa-tech-task
    Click on a corresponding workflow run to see the details. 
 ![alt text](image-1.png)
