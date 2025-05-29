@@ -6,22 +6,21 @@
         },
         "summary": {
             "tests": 6,
-            "passed": 6,
+            "passed": 3,
             "failed": 0,
-            "skipped": 0,
+            "skipped": 3,
             "pending": 0,
             "other": 0,
-            "start": 1748202964.859088,
-            "stop": 1748203030.198068
+            "start": 1748515294.7204869,
+            "stop": 1748515411.5645282
         },
         "tests": [
             {
                 "name": "tests/test_desktop.py::test_check_navigation",
                 "status": "passed",
-                "duration": 6.745033208018867,
-                "start": 1748202964.878815,
-                "stop": 1748202971.624375,
-                "retries": 0,
+                "duration": 5.975394541979767,
+                "start": 1748515294.806368,
+                "stop": 1748515300.782309,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
                     "desktop"
@@ -30,10 +29,9 @@
             {
                 "name": "tests/test_desktop.py::test_check_career_page",
                 "status": "passed",
-                "duration": 8.168316041992512,
-                "start": 1748202971.6252182,
-                "stop": 1748202979.7937589,
-                "retries": 0,
+                "duration": 6.465132251090836,
+                "start": 1748515300.78421,
+                "stop": 1748515307.2495942,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
                     "desktop"
@@ -42,10 +40,9 @@
             {
                 "name": "tests/test_desktop.py::test_check_quality_assurance_page",
                 "status": "passed",
-                "duration": 18.230941167013953,
-                "start": 1748202979.7945569,
-                "stop": 1748202998.026258,
-                "retries": 0,
+                "duration": 15.33707983396016,
+                "start": 1748515307.250439,
+                "stop": 1748515322.5881321,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
                     "desktop"
@@ -53,39 +50,42 @@
             },
             {
                 "name": "tests/test_mobile.py::test_check_navigation",
-                "status": "passed",
-                "duration": 6.099162291997345,
-                "start": 1748202998.028778,
-                "stop": 1748203004.1282089,
-                "retries": 0,
+                "status": "skipped",
+                "duration": 5.707313083985355,
+                "start": 1748515322.590417,
+                "stop": 1748515328.298035,
+                "retries": 3,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
                     "mobile"
-                ]
+                ],
+                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 5, 'Skipped')"
             },
             {
                 "name": "tests/test_mobile.py::test_check_career_page",
-                "status": "passed",
-                "duration": 9.408391291013686,
-                "start": 1748203004.128635,
-                "stop": 1748203013.537227,
-                "retries": 0,
+                "status": "skipped",
+                "duration": 8.517155000008643,
+                "start": 1748515328.298811,
+                "stop": 1748515336.816173,
+                "retries": 3,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
                     "mobile"
-                ]
+                ],
+                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 14, 'Skipped')"
             },
             {
                 "name": "tests/test_mobile.py::test_check_quality_assurance_page",
-                "status": "passed",
-                "duration": 16.65886241698172,
-                "start": 1748203013.537985,
-                "stop": 1748203030.1974778,
-                "retries": 0,
+                "status": "skipped",
+                "duration": 15.14719025103841,
+                "start": 1748515336.8169541,
+                "stop": 1748515351.97438,
+                "retries": 3,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
                     "mobile"
-                ]
+                ],
+                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 39, 'Skipped')"
             }
         ]
     }
