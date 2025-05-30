@@ -7,11 +7,11 @@ class CareersPage:
 
     @allure.step
     def check_locations_exist(self, name: str):
-        return self.page.get_by_role("listitem").filter(has_text= name).is_visible()
+        return self.page.get_by_role("listitem").filter(has_text=name).is_visible()
     
     @allure.step
     def check_teams_exist(self, name: str):
-        return self.page.get_by_role("heading", name= name).is_visible()
+        return self.page.get_by_role("heading", name=name).is_visible()
     
     @allure.step
     def retrieve_life_at_insider_section(self):
