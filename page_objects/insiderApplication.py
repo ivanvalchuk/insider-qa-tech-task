@@ -30,6 +30,7 @@ class App:
     @allure.step
     def click_link(self, link: str):
         self.page.get_by_role("link", name = link).click()
+        self.page.wait_for_load_state()
     
     @allure.step
     def hover_over(self, link: str):

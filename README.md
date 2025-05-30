@@ -21,7 +21,7 @@
 - "pytest -m desktop" - runs the tests on Desktop browsers (e.g. Chromium and Firefox).
 - "pytest -m mobile" - runs the tests on emualated mobile devices (e.g. iPhone 15 and Pixel 7).
 - "pytest -m api" - runs auto tests for API.
-![alt text](image-6.png)
+![alt text](image-3.png)
 - "pytest -m desktop --lf" / "pytest -m mobile --lf" / "pytest -m api --lf" - re-runs the previous failed tests for Desktop / Mobile / API.
 By default, the tests are run in the 'headed' mode and on Chromium, Firefox browsers on Desktop and iPhone 15 and Pixel 7. In order to change to the 'headless'  mode, please change this in "./pytest.ini" by setting 'headless' to 'True'. Adding support for other browsers (e.g. Webkit) and devices can be done in the "./conftest.py" file by adding them to the params of the corresponding fixtures, e.g. params = ['webkit'], params = ['iPhone 14', 'Galaxy S9+'].
 For convenience, the tests are run in the slow mode, which can also be adjusted in the "./conftest.py" file by removing / modifying the value for "slow_mo" under the "get_browser" fixture.

@@ -8,10 +8,12 @@ class QualityAssurancePage:
     @allure.step
     def choose_location_from_dropdown(self, label: str):
         self.page.locator("//select[@name='filter-by-location']").select_option(label)
+        self.page.wait_for_load_state("domcontentloaded")
     
     @allure.step
     def choose_department_from_dropdown(self, label: str):
         self.page.locator("//select[@name='filter-by-department']").select_option(label)
+        self.page.wait_for_load_state("domcontentloaded")
 
     @allure.step
     def check_job_exists(self, idx: int, open_position: str):
