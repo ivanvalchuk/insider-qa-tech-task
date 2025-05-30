@@ -61,4 +61,4 @@ def test_check_quality_assurance_page(desktop_app):
     assert desktop_app.insiderQualityAssurancePage.check_department_equals(idx, "Quality Assurance"), f'There is no department "Quality Asurance" under position {open_position}'
     assert desktop_app.insiderQualityAssurancePage.check_location_equals(idx, "Istanbul, Turkiye"), f'There is no location "Istanbul, Turkiye" under position {open_position}'
     # "Click “View Role” button and check that this action redirects us to Lever Application form page.")
-    assert desktop_app.check_if_redirection_happens_to_Lever_application_page(idx, "https://jobs.lever.co/useinsider/"), "No redirection happens to Lever application page."
+    assert desktop_app.redirection_to_lever_application_page(idx, "https://jobs.lever.co/useinsider/"), "No redirection happens to Lever application page."

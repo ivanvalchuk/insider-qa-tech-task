@@ -16,8 +16,6 @@
 4. Page objects can be found in the "./page_objects" folder.
 5. Pytest fixtures can be checked out in the "./conftest.py" file.
 
-P.S. For better maintainability of the tests for mobile and desktop platforms and a more convenient way of running them, it was decided not to combine them in one file.
-
 #### Running intstructions
 - "pytest" - runs the tests on Desktop browsers and mobile devices and performs API tests.
 - "pytest -m desktop" - runs the tests on Desktop browsers (e.g. Chromium and Firefox).
@@ -33,7 +31,7 @@ For convenience, the tests are run in the slow mode, which can also be adjusted 
 2. Install Allure via "brew install allure" for Mac or check https://allurereport.org/docs/install for other operating systems.
 3. "cd" to the folder "insider-qa-tech-task".
 4. Run the command for generating the report: "allure serve report" and the report will be opened in a separate tab of the browser.
-![alt text](image-6.png)
+![alt text](image-7.png)
 5. Screenshots for the failed tests are taken and recoded in the Allure report, which can be seen as follows:
 ![alt text](image.png)
 6. A generated test report through "GitHub" actions can be found under the "Actions" tab at https://github.com/ivanvalchuk/insider-qa-tech-task

@@ -5,100 +5,15 @@
             "version": "8.3.3"
         },
         "summary": {
-            "tests": 7,
-            "passed": 7,
+            "tests": 0,
+            "passed": 0,
             "failed": 0,
             "skipped": 0,
             "pending": 0,
             "other": 0,
-            "start": 1748547321.2837062,
-            "stop": 1748547327.252575
+            "start": 1748584095.022537,
+            "stop": 1748584095.0891159
         },
-        "tests": [
-            {
-                "name": "tests/test_API.py::test_get_pets_by_status",
-                "status": "passed",
-                "duration": 0.9020464170025662,
-                "start": 1748547321.3453162,
-                "stop": 1748547322.247814,
-                "retries": 0,
-                "file_path": "tests/test_API.py",
-                "tags": [
-                    "api"
-                ]
-            },
-            {
-                "name": "tests/test_API.py::test_update_pet",
-                "status": "passed",
-                "duration": 0.510963833949063,
-                "start": 1748547322.248619,
-                "stop": 1748547322.759825,
-                "retries": 0,
-                "file_path": "tests/test_API.py",
-                "tags": [
-                    "api"
-                ]
-            },
-            {
-                "name": "tests/test_API.py::test_create_pet",
-                "status": "passed",
-                "duration": 0.49624266696628183,
-                "start": 1748547322.760254,
-                "stop": 1748547323.2571971,
-                "retries": 0,
-                "file_path": "tests/test_API.py",
-                "tags": [
-                    "api"
-                ]
-            },
-            {
-                "name": "tests/test_API.py::test_get_pet",
-                "status": "passed",
-                "duration": 0.49746445793425664,
-                "start": 1748547323.258507,
-                "stop": 1748547323.756475,
-                "file_path": "tests/test_API.py",
-                "tags": [
-                    "parametrize::pet_id, status_code::[(99, 200), (999, 404)]",
-                    "api"
-                ]
-            },
-            {
-                "name": "tests/test_API.py::test_delete_pet",
-                "status": "passed",
-                "duration": 0.49983979103853926,
-                "start": 1748547324.254723,
-                "stop": 1748547324.755252,
-                "file_path": "tests/test_API.py",
-                "tags": [
-                    "parametrize::pet_id, status_code::[(99, 200), (999, 404)]",
-                    "api"
-                ]
-            },
-            {
-                "name": "tests/test_API.py::test_create_list_of_users",
-                "status": "passed",
-                "duration": 0.5004786670324393,
-                "start": 1748547325.250884,
-                "stop": 1748547325.752151,
-                "file_path": "tests/test_API.py",
-                "tags": [
-                    "parametrize::request_body, status_code::[([{'id': 0, 'username': 'ivalchuk', 'firstName': 'Ivan', 'lastName': 'Valchuk', 'email': 'ivan.valchuk@gmail.com', 'password': '', 'phone': '+342344324324'}], 200), ('{\"id\": 23, \"category\": {\"id\": 5, \"name\": \"Ivan Valchuk\"}}', 500)]",
-                    "api"
-                ]
-            },
-            {
-                "name": "tests/test_API.py::test_create_order_for_pet",
-                "status": "passed",
-                "duration": 0.4957225829712115,
-                "start": 1748547326.253747,
-                "stop": 1748547326.7501702,
-                "file_path": "tests/test_API.py",
-                "tags": [
-                    "parametrize::request_body, status_code::[({'id': 0, 'petId': 0, 'quantity': 0, 'shipDate': '2025-05-29T18:04:43.451Z', 'status': 'placed', 'complete': True}, 200), ({'id:': 0, 'petId': 0, 'quantity': 0, 'shipDate': '2025-29T18:04:43.451Z', 'status': 'placed', 'complete': True}, 500)]",
-                    "api"
-                ]
-            }
-        ]
+        "tests": []
     }
 }
