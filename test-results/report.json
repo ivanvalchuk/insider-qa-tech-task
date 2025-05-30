@@ -11,16 +11,16 @@
             "skipped": 3,
             "pending": 0,
             "other": 0,
-            "start": 1748615253.90306,
-            "stop": 1748615356.526339
+            "start": 1748615587.482183,
+            "stop": 1748615680.33342
         },
         "tests": [
             {
                 "name": "tests/test_api.py::test_get_pets_by_status",
                 "status": "passed",
-                "duration": 0.6226277080131695,
-                "start": 1748615253.996382,
-                "stop": 1748615254.619489,
+                "duration": 0.7366899169282988,
+                "start": 1748615587.577294,
+                "stop": 1748615588.3142881,
                 "retries": 0,
                 "file_path": "tests/test_api.py",
                 "tags": [
@@ -30,9 +30,9 @@
             {
                 "name": "tests/test_api.py::test_update_pet",
                 "status": "passed",
-                "duration": 0.49495650007156655,
-                "start": 1748615254.620202,
-                "stop": 1748615255.115607,
+                "duration": 0.4996039170655422,
+                "start": 1748615588.314796,
+                "stop": 1748615588.814952,
                 "retries": 0,
                 "file_path": "tests/test_api.py",
                 "tags": [
@@ -42,9 +42,9 @@
             {
                 "name": "tests/test_api.py::test_create_pet",
                 "status": "passed",
-                "duration": 0.49283883295720443,
-                "start": 1748615255.116506,
-                "stop": 1748615255.610036,
+                "duration": 0.5105638749664649,
+                "start": 1748615588.817141,
+                "stop": 1748615589.328512,
                 "retries": 0,
                 "file_path": "tests/test_api.py",
                 "tags": [
@@ -54,9 +54,9 @@
             {
                 "name": "tests/test_api.py::test_get_pet",
                 "status": "passed",
-                "duration": 0.4983655409887433,
-                "start": 1748615255.610821,
-                "stop": 1748615256.110029,
+                "duration": 0.4968677489669062,
+                "start": 1748615589.329495,
+                "stop": 1748615589.8269598,
                 "file_path": "tests/test_api.py",
                 "tags": [
                     "parametrize::pet_id, status_code::[(99, 200), (999, 404)]",
@@ -66,9 +66,9 @@
             {
                 "name": "tests/test_api.py::test_delete_pet",
                 "status": "passed",
-                "duration": 0.4986478749779053,
-                "start": 1748615256.617737,
-                "stop": 1748615257.117186,
+                "duration": 0.4951827919576317,
+                "start": 1748615590.3370082,
+                "stop": 1748615590.832746,
                 "file_path": "tests/test_api.py",
                 "tags": [
                     "parametrize::pet_id, status_code::[(99, 200), (999, 404)]",
@@ -78,9 +78,9 @@
             {
                 "name": "tests/test_api.py::test_create_list_of_users",
                 "status": "passed",
-                "duration": 0.5018680430366658,
-                "start": 1748615257.622082,
-                "stop": 1748615258.124555,
+                "duration": 0.49894566606963053,
+                "start": 1748615591.329771,
+                "stop": 1748615591.829619,
                 "file_path": "tests/test_api.py",
                 "tags": [
                     "parametrize::request_body, status_code::[([{'id': 0, 'username': 'ivalchuk', 'firstName': 'Ivan', 'lastName': 'Valchuk', 'email': 'ivan.valchuk@gmail.com', 'password': '', 'phone': '+342344324324'}], 200), ('{\"id\": 23, \"category\": {\"id\": 5, \"name\": \"Ivan Valchuk\"}}', 500)]",
@@ -90,9 +90,9 @@
             {
                 "name": "tests/test_api.py::test_create_order_for_pet",
                 "status": "passed",
-                "duration": 0.4955060000647791,
-                "start": 1748615258.62331,
-                "stop": 1748615259.119223,
+                "duration": 0.5032803749782033,
+                "start": 1748615592.330488,
+                "stop": 1748615592.834532,
                 "file_path": "tests/test_api.py",
                 "tags": [
                     "parametrize::request_body, status_code::[({'id': 0, 'petId': 0, 'quantity': 0, 'shipDate': '2025-05-29T18:04:43.451Z', 'status': 'placed', 'complete': True}, 200), ({'id:': 0, 'petId': 0, 'quantity': 0, 'shipDate': '2025-29T18:04:43.451Z', 'status': 'placed', 'complete': True}, 500)]",
@@ -102,9 +102,9 @@
             {
                 "name": "tests/test_desktop.py::test_check_navigation",
                 "status": "passed",
-                "duration": 6.144719665986486,
-                "start": 1748615259.623378,
-                "stop": 1748615265.7686179,
+                "duration": 6.128593292029109,
+                "start": 1748615593.335157,
+                "stop": 1748615599.464288,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
                     "desktop"
@@ -113,9 +113,9 @@
             {
                 "name": "tests/test_desktop.py::test_check_career_page",
                 "status": "passed",
-                "duration": 6.490617165982258,
-                "start": 1748615265.769208,
-                "stop": 1748615272.260032,
+                "duration": 6.479670999979135,
+                "start": 1748615599.465058,
+                "stop": 1748615605.944939,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
                     "desktop"
@@ -124,9 +124,9 @@
             {
                 "name": "tests/test_desktop.py::test_check_quality_assurance_page",
                 "status": "passed",
-                "duration": 17.34895299898926,
-                "start": 1748615272.2608042,
-                "stop": 1748615289.610558,
+                "duration": 16.523747041006573,
+                "start": 1748615605.945708,
+                "stop": 1748615622.470232,
                 "file_path": "tests/test_desktop.py",
                 "tags": [
                     "desktop"
@@ -135,9 +135,9 @@
             {
                 "name": "tests/test_mobile.py::test_check_navigation",
                 "status": "skipped",
-                "duration": 3.4810535000287928,
-                "start": 1748615289.612673,
-                "stop": 1748615293.093887,
+                "duration": 3.309196625079494,
+                "start": 1748615622.472765,
+                "stop": 1748615625.782134,
                 "retries": 3,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
@@ -148,9 +148,9 @@
             {
                 "name": "tests/test_mobile.py::test_check_nav_links",
                 "status": "skipped",
-                "duration": 4.196780832018703,
-                "start": 1748615293.094197,
-                "stop": 1748615297.2912571,
+                "duration": 4.208192457968835,
+                "start": 1748615625.782441,
+                "stop": 1748615629.990952,
                 "retries": 3,
                 "file_path": "tests/test_mobile.py",
                 "tags": [
@@ -161,9 +161,9 @@
             {
                 "name": "tests/test_mobile.py::test_check_redirection_to_login_page",
                 "status": "skipped",
-                "duration": 6.23644029092975,
-                "start": 1748615297.2920089,
-                "stop": 1748615303.528687,
+                "duration": 6.253684792027343,
+                "start": 1748615629.991821,
+                "stop": 1748615636.245837,
                 "retries": 3,
                 "file_path": "tests/test_mobile.py",
                 "tags": [

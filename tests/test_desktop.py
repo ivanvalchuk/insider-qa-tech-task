@@ -18,13 +18,15 @@ def test_check_career_page(desktop_app):
   desktop_app.hover_over("Company")
   desktop_app.click_link("Careers")
 
+  # Check if the page has opened or not
+  assert desktop_app.insiderCareersPage.is_careers_page_visible(), "Careers' page was not opened."
+
   location_names = "New York", "Sao Paulo", "London", "Paris", "Amsterdam", "Helsinki", "Warsaw", "Sydney", "Dubai", "Tokyo", "Seoul", "Singapore", "Bangkok", \
                     "Jakarta", "Taipei", "Manila", "Kuala Lumpur", "Ho Chi Minh City", "Istanbul", "Ankara", "Mexico City", "Lima", "Buenos Aires", "Bogota", "Santiago"
   
   team_names = "Customer Success", "Sales", "Product & Engineering", "Finance & Business Support", "Marketing", "CEO’s Executive Office", "Purchasing & Operations",\
                 "People and Culture", "Business Intelligence", "Security Engineering", "Partnership", "Quality Assurance", "Mobile Business Unit", "Partner Support Development",\
                 "Product Design"
-  assert desktop_app.insiderCareersPage.is_careers_page_visible(), "Careers' page was not opened."
 
 # check 'Locations' section 
   for location_name in location_names:
