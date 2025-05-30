@@ -13,6 +13,7 @@
 3. The tests are located as follows:
 - "./tests/test_desktop.py" contains test cases for running on Desktop.
 - "./tests/test_mobile.py" contains test cases for running on Mobile.
+- "./tests/test_api.py" contains test cases for API.
 4. Page objects can be found in the "./page_objects" folder.
 5. Pytest fixtures can be checked out in the "./conftest.py" file.
 
