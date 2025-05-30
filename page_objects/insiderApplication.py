@@ -25,16 +25,16 @@ class App:
     
     @allure.step
     def click_button(self, button: str):
-        self.page.get_by_role("button", name = button).click()
+        self.page.get_by_role("button", name=button).click()
     
     @allure.step
     def click_link(self, link: str):
-        self.page.get_by_role("link", name = link).click()
+        self.page.get_by_role("link", name=link).click()
         self.page.wait_for_load_state()
     
     @allure.step
     def hover_over(self, link: str):
-        self.page.get_by_role("link", name = link).hover()
+        self.page.get_by_role("link", name=link).hover()
     
     @allure.step
     def redirection_to_lever_application_page(self, idx: int, url_name: str):
@@ -45,20 +45,20 @@ class App:
     
     @allure.step
     def is_menu_button_visible(self):
-        return self.page.get_by_role("link", name= "Toggle navigation").is_visible()
+        return self.page.get_by_role("link", name="Toggle navigation").is_visible()
     
     @allure.step
     def is_nav_link_visible(self):
-        whyInsiderLink = self.page.get_by_role("link", name = "Why Insider").is_visible()
-        platformLink = self.page.locator("#navbarNavDropdown").get_by_role("link", name = "Platform").is_visible()
-        solutionsLink = self.page.get_by_role("link", name = "Solutions").is_visible()
-        customersLink = self.page.get_by_role("link", name = "Customers", exact = True).is_visible()
-        resourcesLink = self.page.locator("#navbarNavDropdown").get_by_role("link", name = "Resources").is_visible()
-        companyLink = self.page.get_by_role("link", name = "Company").is_visible()
-        exploreInsiderlink = self.page.get_by_role("link", name = "Explore Insider").is_visible()
-        getDemoButton = self.page.locator("#desktop_hero_24").get_by_role("link", name = "Get a Demo").is_visible()
-        loginButton = self.page.get_by_role("link", name = "Login").is_visible()
-        englishButton = self.page.get_by_role("link", name = "English").is_visible()
+        whyInsiderLink = self.page.get_by_role("link", name="Why Insider").is_visible()
+        platformLink = self.page.locator("#navbarNavDropdown").get_by_role("link", name="Platform").is_visible()
+        solutionsLink = self.page.get_by_role("link", name="Solutions").is_visible()
+        customersLink = self.page.locator("#navbarNavDropdown").get_by_role("link", name="Customers").is_visible()
+        resourcesLink = self.page.locator("#navbarNavDropdown").get_by_role("link", name="Resources").is_visible()
+        companyLink = self.page.get_by_role("link", name="Company").is_visible()
+        exploreInsiderlink = self.page.get_by_role("link", name="Explore Insider").is_visible()
+        getDemoButton = self.page.locator("#desktop_hero_24").get_by_role("link", name="Get a Demo").is_visible()
+        loginButton = self.page.get_by_role("link", name="Login").is_visible()
+        englishButton = self.page.get_by_role("link", name="English").is_visible()
 
         return whyInsiderLink and platformLink and solutionsLink and customersLink and resourcesLink and companyLink and \
                 exploreInsiderlink and getDemoButton and loginButton and englishButton
