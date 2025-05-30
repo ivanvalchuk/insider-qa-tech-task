@@ -4,7 +4,11 @@ from playwright.async_api import Page
 class CareersPage:
     def __init__(self, page: Page):
         self.page = page
-
+    
+    @allure.step
+    def is_careers_page_visible(self):
+        return self.page.locator("#page-head").is_visible()
+    
     @allure.step
     def check_locations_exist(self, name: str):
         return self.page.get_by_role("listitem").filter(has_text=name).is_visible()

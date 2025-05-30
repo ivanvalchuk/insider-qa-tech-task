@@ -7,5 +7,5 @@ class HomePage:
 
         
     @allure.step
-    def check_if_page_visible(self):
+    def is_home_page_visible(self):
         return self.page.locator("#desktop_hero_24").is_visible()
