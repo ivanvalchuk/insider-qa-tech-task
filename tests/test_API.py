@@ -4,7 +4,7 @@ from pytest import mark
 
 
 @mark.api
-@allure.title("Find Pets by status")
+@allure.title("1. Find Pets by status")
 def test_get_pets_by_status():
     url = "https://petstore.swagger.io/v2/pet/findByStatus?status=available&status=pending&status=sold"
     response = requests.get(url)
@@ -20,7 +20,7 @@ def test_get_pets_by_status():
       assert pet["status"]
 
 @mark.api
-@allure.title("Update an existing pet")
+@allure.title("2. Update an existing pet")
 def test_update_pet():
     url = "https://petstore.swagger.io/v2/pet" 
     pet_id = 98  # Existing pet ID to update
@@ -37,7 +37,7 @@ def test_update_pet():
     assert pet["name"] == updated_pet["name"]
 
 @mark.api
-@allure.title("Add a new pet to the store")
+@allure.title("3. Add a new pet to the store")
 def test_create_pet():
     url = "https://petstore.swagger.io/v2/pet"
     pet_id = 99
@@ -54,7 +54,7 @@ def test_create_pet():
     assert pet["name"] == new_pet["name"]
 
 @mark.api
-@allure.title("Find pet by ID")
+@allure.title("4. Find pet by ID")
 @mark.parametrize("pet_id, status_code", [
     (99, 200),    # Valid pet ID
     (999, 404),  # Non-existent pet ID
@@ -68,7 +68,7 @@ def test_get_pet(pet_id, status_code):
 
 
 @mark.api
-@allure.title("Delete a pet")
+@allure.title("5. Delete a pet")
 @mark.parametrize("pet_id, status_code", [
     (99, 200),    # Valid pet ID
     (999, 404),  # Non-existent pet ID
@@ -80,7 +80,7 @@ def test_delete_pet(pet_id, status_code):
 
 
 @mark.api
-@allure.title("Create list of users with given input array")
+@allure.title("6. Create list of users with given input array")
 @mark.parametrize("request_body, status_code", [
     ([{"id": 0, "username": "ivalchuk", "firstName": "Ivan", "lastName": "Valchuk", "email": "ivan.valchuk@gmail.com", "password": "", "phone": "+342344324324"}], 200),    # Valid body
     ('{"id": 23, "category": {"id": 5, "name": "Ivan Valchuk"}}', 500),  # Wrong body
@@ -93,7 +93,7 @@ def test_create_list_of_users(request_body, status_code):
 
 
 @mark.api
-@allure.title("Place an order for a pet")
+@allure.title("7. Place an order for a pet")
 @mark.parametrize("request_body, status_code", [
     ({"id": 0, "petId": 0, "quantity": 0, "shipDate": "2025-05-29T18:04:43.451Z", "status": "placed", "complete": True}, 200),    # Valid body
     ({"id:": 0, "petId": 0, "quantity": 0, "shipDate": "2025-29T18:04:43.451Z", "status": "placed", "complete": True}, 500),  # Wrong body
