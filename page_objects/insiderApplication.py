@@ -44,7 +44,7 @@ class App:
         return url_name in self.new_page.url
     
     @allure.step
-    def is_menu_button_visible(self, label: str):
+    def is_menu_button_visible(self):
         return self.page.get_by_role("link", name= "Toggle navigation").is_visible()
     
     @allure.step
@@ -55,14 +55,13 @@ class App:
         customersLink = self.page.get_by_role("link", name = "Customers", exact = True).is_visible()
         resourcesLink = self.page.locator("#navbarNavDropdown").get_by_role("link", name = "Resources").is_visible()
         companyLink = self.page.get_by_role("link", name = "Company").is_visible()
-        companyLink = self.page.get_by_role("link", name = "Explore Insider").is_visible()
-        loginButton = self.page.get_by_role("link", name = "Login").is_visible()
+        exploreInsiderlink = self.page.get_by_role("link", name = "Explore Insider").is_visible()
         getDemoButton = self.page.locator("#desktop_hero_24").get_by_role("link", name = "Get a Demo").is_visible()
         loginButton = self.page.get_by_role("link", name = "Login").is_visible()
         englishButton = self.page.get_by_role("link", name = "English").is_visible()
 
         return whyInsiderLink and platformLink and solutionsLink and customersLink and resourcesLink and companyLink and \
-                loginButton and getDemoButton and englishButton
+                exploreInsiderlink and getDemoButton and loginButton and englishButton
 
     @allure.step
     def redirection_to_login_page(self, url_name: str):
