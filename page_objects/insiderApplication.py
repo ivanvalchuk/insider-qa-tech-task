@@ -34,7 +34,6 @@ class App:
     @allure.step
     def hover_over(self, link: str):
         self.page.get_by_role("link", name = link).hover()
-        self.page.wait_for_load_state()
     
     @allure.step
     def redirection_to_lever_application_page(self, idx: int, url_name: str):
