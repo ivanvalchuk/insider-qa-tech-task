@@ -37,7 +37,7 @@ For convenience, the tests are run in the slow mode, which can also be adjusted 
 
 #### CI
 The tests are also run on each push and pull request to the respository in GitHub, which is configured in "playwright.yml" as part of the ".github/workflows" folder:
-![alt text](image-4.png)
+![alt text](image-1.png)
 A generated test report through "GitHub" actions can be found under the "Actions" tab at https://github.com/ivanvalchuk/insider-qa-tech-task
    Click on a corresponding workflow run to see the details. 
 ![alt text](image-1.png)
