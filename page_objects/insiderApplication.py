@@ -56,8 +56,8 @@ class App:
         resourcesLink = self.page.locator("#navbarNavDropdown").get_by_role("link", name="Resources").is_visible()
         companyLink = self.page.get_by_role("link", name="Company").is_visible()
         exploreInsiderlink = self.page.get_by_role("link", name="Explore Insider").is_visible()
-        getDemoButton = self.page.locator("#desktop_hero_24").get_by_role("link", name="Get a Demo").is_visible()
         loginButton = self.page.get_by_role("link", name="Login").is_visible()
+        getDemoButton = self.page.locator("#navbarNavDropdown").get_by_role("link", name="Get a Demo").is_visible()
         englishButton = self.page.get_by_role("link", name="English").is_visible()
 
         return whyInsiderLink and platformLink and solutionsLink and customersLink and resourcesLink and companyLink and \
