@@ -49,16 +49,16 @@ class App:
     
     @allure.step
     def is_nav_link_visible(self):
-        whyInsiderLink = self.page.get_by_role("link", name="Why Insider").is_visible()
-        platformLink = self.page.locator("#navbarNavDropdown").get_by_role("link", name="Platform").is_visible()
-        solutionsLink = self.page.get_by_role("link", name="Solutions").is_visible()
-        customersLink = self.page.locator("#navbarNavDropdown").get_by_role("link", name="Customers").is_visible()
-        resourcesLink = self.page.locator("#navbarNavDropdown").get_by_role("link", name="Resources").is_visible()
-        companyLink = self.page.get_by_role("link", name="Company").is_visible()
-        exploreInsiderlink = self.page.get_by_role("link", name="Explore Insider").is_visible()
-        loginButton = self.page.get_by_role("link", name="Login").is_visible()
-        getDemoButton = self.page.locator("#navbarNavDropdown").get_by_role("link", name="Get a Demo").is_visible()
-        englishButton = self.page.get_by_role("link", name="English").is_visible()
+        whyInsiderLink = self.page.locator("#navbarNavDropdown >> text='Why Insider'").is_visible()
+        platformLink = self.page.locator("#navbarNavDropdown >> text='Platform'").is_visible()
+        solutionsLink = self.page.locator("#navbarNavDropdown >> text='Solutions'").is_visible()
+        customersLink = self.page.locator("#navbarNavDropdown >> text='Customers'").is_visible()
+        resourcesLink = self.page.locator("#navbarNavDropdown >> text='Resources'").is_visible()
+        companyLink = self.page.locator("#navbarNavDropdown >> text='Company'").is_visible()
+        exploreInsiderlink = self.page.locator(".nav-no-dropdown >> text='Explore Insider'").is_visible()
+        loginButton = self.page.locator("#navbarNavDropdown >> text='Login'").is_visible()
+        getDemoButton = self.page.locator("#navbarNavDropdown >> text='Get a Demo'").is_visible()
+        englishButton = self.page.locator("#navbarNavDropdown >> text='English'").is_visible()
 
         return whyInsiderLink and platformLink and solutionsLink and customersLink and resourcesLink and companyLink and \
                 exploreInsiderlink and getDemoButton and loginButton and englishButton
