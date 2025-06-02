@@ -16,7 +16,7 @@ def test_check_navigation(desktop_app):
 def test_check_career_page(desktop_app):
 
   desktop_app.hover_over("Company")
-  desktop_app.click_link("Careers")
+  desktop_app.navigate_to("Careers")
 
   # Check if the page has opened or not
   assert desktop_app.insiderCareersPage.is_careers_page_visible(), "Careers' page was not opened."

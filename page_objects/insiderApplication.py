@@ -14,14 +14,12 @@ class App:
         self.insiderQualityAssurancePage = QualityAssurancePage(self.page)
         self.insiderCareersPage = CareersPage(self.page)
 
-
     @allure.step
     def goto(self, endpoint: str, use_base_url=True):
         if use_base_url:
             self.page.goto(self.base_url + endpoint)
         else:
             self.page.goto(endpoint)
-    
     
     @allure.step
     def click_button(self, button: str):
@@ -30,11 +28,14 @@ class App:
     @allure.step
     def click_link(self, link: str):
         self.page.get_by_role("link", name=link).click()
-        self.page.wait_for_load_state()
     
     @allure.step
     def hover_over(self, link: str):
         self.page.get_by_role("link", name=link).hover()
+    
+    @allure.step
+    def navigate_to(self, link: str):
+        self.page.get_by_role("link", name=link).click(force=True)
     
     @allure.step
     def redirection_to_lever_application_page(self, idx: int, url_name: str):
