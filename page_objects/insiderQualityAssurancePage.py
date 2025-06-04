@@ -15,20 +15,20 @@ class QualityAssurancePage:
 
     @allure.step
     def check_job_exists(self, idx: int, open_position: str):
-        retreived_value = self.page.locator(f".position-list-item:nth-child({idx+1}) .position-title").inner_text()
+        retreived_value = self.page.locator(f".position-list-item:nth-child({idx+1}) .position-title").text_content()
         return open_position == retreived_value
     
     @allure.step
     def check_position_contains(self, idx: int, position: str):
-        retreived_value = self.page.locator(f".position-list-item:nth-child({idx+1}) .position-title").inner_text()
+        retreived_value = self.page.locator(f".position-list-item:nth-child({idx+1}) .position-title").text_content()
         return position in retreived_value
     
     @allure.step
     def check_department_equals(self, idx: int, department: str):
-        retreived_value = self.page.locator(f".position-list-item:nth-child({idx+1}) .position-department").inner_text()
+        retreived_value = self.page.locator(f".position-list-item:nth-child({idx+1}) .position-department").text_content()
         return department == retreived_value
     
     @allure.step
     def check_location_equals(self, idx: int, location: str):
-        retreived_value = self.page.locator(f".position-list-item:nth-child({idx+1}) .position-location").inner_text()
+        retreived_value = self.page.locator(f".position-list-item:nth-child({idx+1}) .position-location").text_content()
         return location == retreived_value
