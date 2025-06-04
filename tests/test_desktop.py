@@ -7,7 +7,7 @@ from pytest import mark
 def test_check_navigation(desktop_app):
 
   # Accept the use of cookies
-  desktop_app.click_button("Accept All")
+  desktop_app.click_button_cookie_layer("Accept All")
   # Check if the page has opened or not
   assert desktop_app.insiderHomePage.is_home_page_visible(), "Insider home page was not opened."
 
@@ -15,7 +15,7 @@ def test_check_navigation(desktop_app):
 @allure.title("2. Select “Company” menu in navigation bar, select “Careers” and check Career page, its Locations, Teams and Life at Insider blocks are opened or not.")
 def test_check_career_page(desktop_app):
 
-  desktop_app.hover_over("Company")
+  desktop_app.hover_over_nav_link("Company")
   desktop_app.navigate_to("Careers")
 
   # Check if the page has opened or not
@@ -33,7 +33,7 @@ def test_check_career_page(desktop_app):
     assert desktop_app.insiderCareersPage.check_locations_exist(location_name), f"Location {location_name} is missing."
 
 # check 'Teams' section
-  desktop_app.click_link("See all teams")
+  desktop_app.click_button("See all teams")
   for team_name in team_names:
     assert desktop_app.insiderCareersPage.check_teams_exist(team_name), f"Team {team_name} is missing."
 
@@ -47,7 +47,7 @@ def test_check_career_page(desktop_app):
 "5. Click “View Role” button and check that this action redirects us to Lever Application form page.")
 def test_check_quality_assurance_page(desktop_app):
   desktop_app.goto("/careers/quality-assurance")
-  desktop_app.click_link("See all QA jobs")
+  desktop_app.click_button("See all QA jobs")
     
   # filter all jobs by location
   desktop_app.insiderQualityAssurancePage.choose_location_from_dropdown("Istanbul, Turkiye")

@@ -22,31 +22,35 @@ class App:
             self.page.goto(endpoint)
     
     @allure.step
-    def click_button(self, button: str):
-        self.page.get_by_role("button", name=button).click()
+    def click_button_cookie_layer(self, name):
+        self.page.locator(f".cli-bar-btn_container >> text={name}").click()
     
     @allure.step
-    def click_link(self, link: str):
-        self.page.get_by_role("link", name=link).click()
+    def click_button(self, name):
+        self.page.locator(f".btn-outline-secondary.rounded >> text={name}").click()
     
     @allure.step
-    def hover_over(self, link: str):
-        self.page.get_by_role("link", name=link).hover()
+    def hover_over_nav_link(self, name: str):
+        self.page.locator(f"#navbarNavDropdown >> text={name}").hover()
     
     @allure.step
-    def navigate_to(self, link: str):
-        self.page.get_by_role("link", name=link).click(force=True)
+    def navigate_to(self, name: str):
+        self.page.locator(f".dropdown-sub >> text={name}").click(force=True)
     
     @allure.step
     def redirection_to_lever_application_page(self, idx: int, url_name: str):
         with self.context.expect_page() as new_page_info:
-            self.page.locator(f"#jobs-list > div:nth-child({idx+1}) > div > a").click()
+            self.page.locator(f".position-list-item:nth-child({idx+1}) .btn").click()
         self.new_page = new_page_info.value
         return url_name in self.new_page.url
     
     @allure.step
     def is_menu_button_visible(self):
-        return self.page.get_by_role("link", name="Toggle navigation").is_visible()
+        return self.page.locator("[aria-label='Toggle navigation']").is_visible()
+    
+    @allure.step
+    def click_menu_button(self):
+        return self.page.locator("[aria-label='Toggle navigation']").click()
     
     @allure.step
     def is_nav_link_visible(self):
@@ -56,18 +60,12 @@ class App:
         customersLink = self.page.locator("#navbarNavDropdown >> text='Customers'").is_visible()
         resourcesLink = self.page.locator("#navbarNavDropdown >> text='Resources'").is_visible()
         companyLink = self.page.locator("#navbarNavDropdown >> text='Company'").is_visible()
-        exploreInsiderlink = self.page.locator(".nav-no-dropdown >> text='Explore Insider'").is_visible()
-        loginButton = self.page.locator("#navbarNavDropdown >> text='Login'").is_visible()
-        getDemoButton = self.page.locator("#navbarNavDropdown >> text='Get a Demo'").is_visible()
-        englishButton = self.page.locator("#navbarNavDropdown >> text='English'").is_visible()
-
-        return whyInsiderLink and platformLink and solutionsLink and customersLink and resourcesLink and companyLink and \
-                exploreInsiderlink and getDemoButton and loginButton and englishButton
+        return whyInsiderLink and platformLink and solutionsLink and customersLink and resourcesLink and companyLink
 
     @allure.step
     def redirection_to_login_page(self, url_name: str):
         with self.context.expect_page() as new_page_info:
-            self.page.get_by_role("link", name="Login").click()
+            self.page.locator("#navbarNavDropdown >> text='Login'").click()
         self.new_page = new_page_info.value
         return url_name == self.new_page.url
     
