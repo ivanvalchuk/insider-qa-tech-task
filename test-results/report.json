@@ -1,0 +1,188 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.3.3"
+        },
+        "summary": {
+            "tests": 14,
+            "passed": 11,
+            "failed": 0,
+            "skipped": 3,
+            "pending": 0,
+            "other": 0,
+            "start": 1764846796.77586,
+            "stop": 1764846884.8781781
+        },
+        "tests": [
+            {
+                "name": "tests/test_api.py::test_create_pet",
+                "status": "passed",
+                "duration": 0.5882844179868698,
+                "start": 1764846796.826715,
+                "stop": 1764846797.416041,
+                "retries": 0,
+                "file_path": "tests/test_api.py",
+                "tags": [
+                    "api"
+                ]
+            },
+            {
+                "name": "tests/test_api.py::test_get_pets_by_status",
+                "status": "passed",
+                "duration": 0.9850289579480886,
+                "start": 1764846797.417454,
+                "stop": 1764846798.403286,
+                "retries": 0,
+                "file_path": "tests/test_api.py",
+                "tags": [
+                    "api"
+                ]
+            },
+            {
+                "name": "tests/test_api.py::test_update_pet",
+                "status": "passed",
+                "duration": 0.5179607076570392,
+                "start": 1764846798.403605,
+                "stop": 1764846798.922394,
+                "retries": 0,
+                "file_path": "tests/test_api.py",
+                "tags": [
+                    "api"
+                ]
+            },
+            {
+                "name": "tests/test_api.py::test_create_list_of_users",
+                "status": "passed",
+                "duration": 0.5257240841165185,
+                "start": 1764846798.923502,
+                "stop": 1764846799.450072,
+                "file_path": "tests/test_api.py",
+                "tags": [
+                    "parametrize::request_body, status_code::[([{'id': 0, 'username': 'ivalchuk', 'firstName': 'Ivan', 'lastName': 'Valchuk', 'email': 'ivan.valchuk@gmail.com', 'password': '', 'phone': '+342344324324'}], 200), ('{\"id\": 23, \"category\": {\"id\": 5, \"name\": \"Ivan Valchuk\"}}', 500)]",
+                    "api"
+                ]
+            },
+            {
+                "name": "tests/test_api.py::test_create_order_for_pet",
+                "status": "passed",
+                "duration": 0.5217512091621757,
+                "start": 1764846799.976325,
+                "stop": 1764846800.49885,
+                "file_path": "tests/test_api.py",
+                "tags": [
+                    "parametrize::request_body, status_code::[({'id': 0, 'petId': 0, 'quantity': 0, 'shipDate': '2025-05-29T18:04:43.451Z', 'status': 'placed', 'complete': True}, 200), ({'id:': 0, 'petId': 0, 'quantity': 0, 'shipDate': '2025-29T18:04:43.451Z', 'status': 'placed', 'complete': True}, 500)]",
+                    "api"
+                ]
+            },
+            {
+                "name": "tests/test_api.py::test_get_pet",
+                "status": "passed",
+                "duration": 0.5300196260213852,
+                "start": 1764846801.01907,
+                "stop": 1764846801.549559,
+                "file_path": "tests/test_api.py",
+                "tags": [
+                    "parametrize::pet_id, status_code::[(99, 200), (999, 404)]",
+                    "api"
+                ]
+            },
+            {
+                "name": "tests/test_api.py::test_delete_pet",
+                "status": "passed",
+                "duration": 0.5160150425508618,
+                "start": 1764846802.067798,
+                "stop": 1764846802.5848992,
+                "file_path": "tests/test_api.py",
+                "tags": [
+                    "parametrize::pet_id, status_code::[(99, 200), (999, 404)]",
+                    "api"
+                ]
+            },
+            {
+                "name": "tests/test_api.py::test_get_deleted_pet",
+                "status": "passed",
+                "duration": 0.5265929587185383,
+                "start": 1764846803.1150331,
+                "stop": 1764846803.642389,
+                "retries": 0,
+                "file_path": "tests/test_api.py",
+                "tags": [
+                    "api"
+                ]
+            },
+            {
+                "name": "tests/test_desktop.py::test_check_navigation",
+                "status": "passed",
+                "duration": 5.575503998436034,
+                "start": 1764846803.643832,
+                "stop": 1764846809.220017,
+                "file_path": "tests/test_desktop.py",
+                "tags": [
+                    "desktop"
+                ]
+            },
+            {
+                "name": "tests/test_desktop.py::test_check_career_page",
+                "status": "passed",
+                "duration": 6.341553167439997,
+                "start": 1764846809.2207518,
+                "stop": 1764846815.5625799,
+                "file_path": "tests/test_desktop.py",
+                "tags": [
+                    "desktop"
+                ]
+            },
+            {
+                "name": "tests/test_desktop.py::test_check_quality_assurance_page",
+                "status": "passed",
+                "duration": 13.303711583837867,
+                "start": 1764846815.563647,
+                "stop": 1764846828.8677871,
+                "file_path": "tests/test_desktop.py",
+                "tags": [
+                    "desktop"
+                ]
+            },
+            {
+                "name": "tests/test_mobile.py::test_check_navigation",
+                "status": "skipped",
+                "duration": 3.0612866263836622,
+                "start": 1764846828.868577,
+                "stop": 1764846831.9303281,
+                "retries": 3,
+                "file_path": "tests/test_mobile.py",
+                "tags": [
+                    "mobile"
+                ],
+                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 5, 'Skipped')"
+            },
+            {
+                "name": "tests/test_mobile.py::test_check_nav_links",
+                "status": "skipped",
+                "duration": 4.120513875037432,
+                "start": 1764846831.930836,
+                "stop": 1764846836.051757,
+                "retries": 3,
+                "file_path": "tests/test_mobile.py",
+                "tags": [
+                    "mobile"
+                ],
+                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 11, 'Skipped')"
+            },
+            {
+                "name": "tests/test_mobile.py::test_check_redirection_to_login_page",
+                "status": "skipped",
+                "duration": 6.184206334874034,
+                "start": 1764846836.0527308,
+                "stop": 1764846842.237289,
+                "retries": 3,
+                "file_path": "tests/test_mobile.py",
+                "tags": [
+                    "mobile"
+                ],
+                "trace": "('/Users/ivan/Downloads/insider-qa-tech-task/tests/test_mobile.py', 18, 'Skipped')"
+            }
+        ]
+    }
+}
